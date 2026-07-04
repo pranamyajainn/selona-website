@@ -23,11 +23,11 @@ const satoshi = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("https://selona.ai"),
   title: {
-    default: "Selona | AI Automation for Business Processes",
+    default: "Selona | The AI Workspace for Finance Teams",
     template: "%s | Selona",
   },
   description:
-    "Built with AI, Powered by AI Native Talent. Selona makes AI automation accessible to every business, regardless of size or technical expertise.",
+    "ThinkAIWork is the AI-agnostic workspace built for finance teams and fractional CFOs — turning controlled inputs into structured, auditable outputs.",
 };
 
 export default function RootLayout({

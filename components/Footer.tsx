@@ -44,7 +44,9 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col gap-1 text-sm text-body-60 md:flex-row md:items-center md:justify-between">
-          <p className="py-2.5">Selona. AI automation for business processes.</p>
+          <p className="py-2.5">
+            Selona. AI workspaces for finance teams and fractional CFOs.
+          </p>
           <div className="flex gap-4">
             <Link
               href="/privacy"

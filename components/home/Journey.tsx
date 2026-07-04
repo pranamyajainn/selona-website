@@ -13,7 +13,7 @@ export function Journey() {
           </Reveal>
           <WordReveal
             as="h2"
-            text="Discover features that simplify workflows & grow your business."
+            text="Discover features that simplify finance workflows & grow your practice."
             className="type-h2 max-w-2xl"
             onScroll
           />

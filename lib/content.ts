@@ -5,19 +5,19 @@
 export const site = {
   email: "info@selona.ai",
   bookingUrl: "https://meetings-eu1.hubspot.com/rahul4",
-  badge: "AI AUTOMATION FOR BUSINESS PROCESSES",
-  // DRAFT: Pending Rahul's approval
-  headline: "ThinkAIWork automates your business reporting, reconciliations, and data workflows with custom context",
-  // DRAFT: Pending Rahul's approval
-  subheadline: "Automate report generation, financial reconciliation, and analysis with custom-built data context.",
-  // DRAFT: Pending Rahul's approval
+  badge: "AI WORKSPACE FOR FINANCE TEAMS",
+  // DRAFT: Pending Rahul's approval (audience per deck Slide 1/3)
+  headline: "ThinkAIWork automates reporting, reconciliations, and data workflows for finance teams and fractional CFOs",
+  // DRAFT: Pending Rahul's approval (derived from deck Slide 1)
+  subheadline: "The AI-agnostic workspace that turns controlled inputs into structured, auditable outputs.",
+  // DRAFT: Pending Rahul's approval (audience per deck Slide 1/3)
   mission:
-    "ThinkAIWork simplifies AI automation, enabling businesses to build custom contexts and run workflows without technical complexity.",
+    "ThinkAIWork gives finance teams and fractional CFOs a controlled AI workspace: custom contexts and automated workflows without technical complexity.",
   ctaPrimary: "Request a demo",
   ctaSecondary: "Explore Platform",
-  // DRAFT: Pending Rahul's approval
+  // DRAFT: Pending Rahul's approval (audience per deck Slide 1/3)
   footerTagline:
-    "ThinkAIWork: The AI Native platform automating business analysis, custom context curation, and process workflows.",
+    "ThinkAIWork: the trustable AI workspace for finance teams and fractional CFOs — controlled inputs in, structured, auditable outputs out.",
 };
 
 // Product walkthrough: real screens from Selona's Context Accelerator product
@@ -26,10 +26,107 @@ export const site = {
 // Output and Library have no dedicated workspace screen in the source
 // recordings, so their media is a cropped inset of the real overview screen's
 // own card for that stage rather than a fabricated screenshot.
+// Lead copy is verbatim from the investor deck (Slide 1) — approved, no
+// draft flag needed.
 export const platformLead = {
-  eyebrow: "CONTEXT ACCELERATOR",
-  heading: "Build better context. Get better answers.",
+  eyebrow: "ThinkAIWork · Flagship Product",
+  heading: "A trustable workspace for your business AI.",
+  sub: "ThinkAIWork is the AI-agnostic workspace built for finance teams and fractional CFOs — turning controlled inputs into structured, auditable outputs.",
   image: "/product/overview-a.webp",
+};
+
+// Problem section: names and one-line explanations verbatim from the
+// investor deck (Slide 2).
+export const problems = {
+  eyebrow: "THE PROBLEM",
+  heading: "Finance AI is broken.",
+  intro:
+    "Practitioners hesitate to adopt AI because control shifts away from them. Six structural failures keep generic AI out of the finance function.",
+  items: [
+    {
+      name: "Generic Output",
+      tagline: "Sounds like every other company",
+      body: "No board voice, no company context, no competitive edge.",
+    },
+    {
+      name: "Context Drift",
+      tagline: "Every session starts blank",
+      body: "Institutional knowledge re-explained monthly — and lost again.",
+    },
+    {
+      name: "No Fixed Structure",
+      tagline: "Different analyst, different output",
+      body: "The board sees something new every month. No repeatability, no trust.",
+    },
+    {
+      name: "Exploding Token Cost",
+      tagline: "API bills scale invisibly",
+      body: "Same context re-sent every call. No visibility, no control over spend.",
+    },
+    {
+      name: "Model Lock-in",
+      tagline: "Switch models, everything breaks",
+      body: "Workflows, prompts and outputs all vendor-trapped.",
+    },
+    {
+      name: "Cluttered Context",
+      tagline: "Files everywhere, adoption stalls",
+      body: "Different teams, projects and geographies bury context in confusion.",
+    },
+  ],
+};
+
+// Feature grid: four real ThinkAIWork features, verbatim from the investor
+// deck (Slide 3). Token Optimizer is a platform feature, not a separate
+// product.
+export const features = [
+  {
+    name: "Out-of-box skills",
+    body: "Plug-and-play head start for generic finance use cases.",
+  },
+  {
+    name: "Token Optimizer",
+    body: "Cost control — keep AI inside your budget, transparently.",
+  },
+  {
+    name: "Library of contexts",
+    body: "Reusable contexts, skills and files for the whole function.",
+  },
+  {
+    name: "Memory that never forgets",
+    body: "Easy search, versioning and storage of files needed for audit.",
+  },
+];
+
+// Differentiator claim, verbatim from the investor deck (Slide 4).
+export const differentiator =
+  "Model flexibility — start on Claude, run Anthropic, OpenAI or local models (Llama, Mistral) without rebuilding context.";
+
+// Traction data, verbatim from the investor deck (Slide 6).
+export const traction = {
+  eyebrow: "TRACTION",
+  heading: "MVP ready — and already in use.",
+  sub: "MVP is ready and in the hands of real fractional CFOs, two enterprise deals are closing, and three partnerships extend our reach.",
+  stats: [
+    { value: "10", label: "Fractional CFOs using the platform" },
+    { value: "2", label: "Enterprise deals in progress" },
+    { value: "15", label: "Strong prospects in pipeline" },
+  ],
+  partnershipsLabel: "Partnerships signed",
+  partnerships: [
+    {
+      name: "Sookti AI",
+      body: "Mid-market finance functions running SAP as the general ledger.",
+    },
+    {
+      name: "DevRev",
+      body: "Finance function for the agentic AI platform.",
+    },
+    {
+      name: "Automation Anywhere",
+      body: "Automation of core finance processes.",
+    },
+  ],
 };
 
 export const platformStages = [
@@ -118,7 +215,7 @@ export const journey = [
   {
     step: "02",
     name: "Automation",
-    title: "Launch pre-built business workflows",
+    title: "Launch pre-built finance workflows",
     body: "ThinkAIWork runs automated tasks, from complex VAT reconciliations to board decks, grounded directly in your custom data.",
   },
   {
@@ -159,21 +256,8 @@ export const sectors = [
   "AI Start ups",
 ];
 
-// DRAFT: Pending Rahul's approval
-export const aboutBullets = [
-  {
-    title: "Context Architecture",
-    body: "ThinkAIWork structures raw business files, guidelines, and rules into an active context layer.",
-  },
-  {
-    title: "Structured Workflows",
-    body: "ThinkAIWork executes automated board decks, audits, and VAT reconciliations instantly.",
-  },
-  {
-    title: "Extensible Skills",
-    body: "ThinkAIWork extends via slash commands, plugins, and custom tool integrations.",
-  },
-];
+// aboutBullets removed: the invented capability bullets are replaced by the
+// deck-verbatim `features` grid above (Slide 3).
 
 export const toolLogos = [
   "OpenAI",
@@ -213,11 +297,11 @@ export const careers = [
 export const faqs = [
   {
     q: "What is ThinkAIWork?",
-    a: "ThinkAIWork is an Agentic AI platform designed to automate complex business workflows. It enables businesses to build custom data context, configure automated report templates, and run workflows like VAT reconciliation and board deck generation.",
+    a: "ThinkAIWork is an Agentic AI workspace built for finance teams and fractional CFOs. It enables them to build custom data context, configure automated report templates, and run workflows like VAT reconciliation and board deck generation.",
   },
   {
-    q: "How does ThinkAIWork automate business workflows?",
-    a: "ThinkAIWork integrates raw datasets, custom rules, and pre-built templates to execute business operations. Users upload their schemas and source files to ground the AI's analysis in accurate numbers.",
+    q: "How does ThinkAIWork automate finance workflows?",
+    a: "ThinkAIWork integrates raw datasets, custom rules, and pre-built templates to execute finance operations. Users upload their schemas and source files to ground the AI's analysis in accurate numbers.",
   },
   {
     q: "What makes ThinkAIWork different from generic AI tools?",
@@ -233,51 +317,65 @@ export const faqs = [
   },
 ];
 
+// Pricing structure rebuilt around the real revenue model (investor deck,
+// Slide 7): four streams. The deck specifies structure, not prices —
+// specific figures are deliberately absent, PENDING Rahul's input; the
+// previous $30/hour and $2,400/week figures were invented and are removed.
 export const pricingIntro = {
   eyebrow: "PRICING",
-  heading: "Simple Price For All",
-  sub: "Flexible pricing plans that fit your budget & scale with needs.",
+  // DRAFT: Pending Rahul's approval
+  heading: "Priced the way finance teams buy",
+  sub: "Three distinct revenue streams plus ongoing professional services.",
   donation:
     "We donate 2% the Subscription billing to Women STEM Students Hackathons.",
 };
 
 export const pricingTiers = [
   {
-    name: "Talent time and material",
-    price: "From $30",
-    period: "/hour",
+    name: "User License",
+    // PLACEHOLDER: per-seat figure pending Rahul's input
+    price: "Per seat",
+    period: " · billed annually",
+    model: "Recurring",
     description:
-      "For businesses aiming to harness AI and automation to lead their industry",
-    features: [
-      "Fully Customized AI Solutions",
-      "Unlimited Integrations",
-      "Advanced Reporting & Insights",
-      "Scalable AI Solutions",
-    ],
+      "Multi-tenant, role-based platform access — charged per seat, billed annually.",
+    features: [],
+    note: null,
+    highlighted: true,
+  },
+  {
+    name: "Context Building",
+    // PLACEHOLDER: per-file figure pending Rahul's input
+    price: "Per context file",
+    period: " · one-time",
+    model: "One-time",
+    description:
+      "Parent and use-case context, priced per delivered context (.md) file.",
+    features: [],
     note: null,
     highlighted: false,
   },
   {
-    name: "POD (Product oriented delivery)",
-    price: "$2,400",
-    period: "/week",
+    name: "Skills & AI Agents",
+    // PLACEHOLDER: per-skill figure pending Rahul's input
+    price: "Per skill",
+    period: " · one-time",
+    model: "One-time",
     description:
-      "based on team composition and engagement levels + any AI resource consumption at actual.",
+      "Charged per skill, priced by integration complexity and level of build.",
     features: [],
-    note: "Example: A 4-person PoD team with each member engaged at 50% results in a 2 FTE (Full-Time Equivalent) commitment",
-    highlighted: true,
+    note: null,
+    highlighted: false,
   },
   {
-    name: "Managed Services",
-    price: "Custom pricing",
-    period: "/month",
-    description: "Custom pricing for human and AI resources.",
-    features: [
-      "Advanced AI Tools",
-      "Customized Automation Features",
-      "Real-Time Reporting",
-      "Chatbot Integration",
-    ],
+    name: "Professional Services",
+    // PLACEHOLDER: managed-services figure pending Rahul's input
+    price: "Managed",
+    period: " · yearly",
+    model: "Recurring",
+    description:
+      "Context maintenance and enhancements over time, on a recurring managed-services basis.",
+    features: [],
     note: null,
     highlighted: false,
   },

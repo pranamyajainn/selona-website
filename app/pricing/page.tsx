@@ -11,8 +11,9 @@ export const metadata: Metadata = {
 };
 
 // Structure cloned from liminary.io/pricing: eyebrow + display heading +
-// sub line, three tier cards (middle tier emphasized), closing CTA band,
-// mega footer. All tier copy is Selona's real pricing.
+// sub line, tier cards, closing CTA band, mega footer. Tiers are the four
+// real revenue streams from the investor deck (Slide 7); dollar figures are
+// deliberately absent pending Rahul's input.
 export default function PricingPage() {
   return (
     <>
@@ -23,7 +24,7 @@ export default function PricingPage() {
           sub={pricingIntro.sub}
         />
 
-        <div className="mx-auto grid max-w-6xl gap-6 pb-10 md:grid-cols-3">
+        <div className="mx-auto grid max-w-6xl gap-6 pb-10 md:grid-cols-2 xl:grid-cols-4">
           {pricingTiers.map((tier, i) => (
             <Reveal
               key={tier.name}
@@ -34,6 +35,13 @@ export default function PricingPage() {
                   : "border border-line bg-paper"
               }`}
             >
+              <p
+                className={`type-eyebrow ${
+                  tier.highlighted ? "text-sky" : "text-body-60"
+                }`}
+              >
+                {tier.model}
+              </p>
               <h2 className="type-h3">{tier.name}</h2>
               <p>
                 <span className="type-h2">{tier.price}</span>

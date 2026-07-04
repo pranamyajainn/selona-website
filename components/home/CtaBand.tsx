@@ -1,39 +1,66 @@
 import Image from "next/image";
 import { Reveal, WordReveal } from "@/components/Reveal";
 import { PrimaryButton, SecondaryButton } from "@/components/Buttons";
-import { Placeholder } from "@/components/Placeholder";
-import { site } from "@/lib/content";
+import { site, traction } from "@/lib/content";
 
-// Liminary ratings band analog: no Selona counterpart exists (no store
-// rating), so the slot displays a premium brand trust card.
-export function RatingsPlaceholder() {
+// Liminary ratings band analog. Formerly an honest placeholder (no real
+// data existed); now filled with real traction data and signed partnerships
+// from the investor deck (Slide 6).
+export function Traction() {
   return (
     <section className="gutter py-10">
       <div className="mx-auto max-w-6xl">
-        <div className="relative overflow-hidden rounded-[24px] border border-line bg-ink-deep px-6 py-16 md:py-24 text-center">
+        <div className="relative overflow-hidden rounded-[24px] border border-line bg-ink-deep px-6 py-16 md:px-16 md:py-24">
           <Image
             src="/brand/trust-placeholder.webp"
-            alt="Selona secure and reliable AI automation background"
+            alt="ThinkAIWork traction background"
             fill
             priority
             sizes="(min-width: 1200px) 1100px, 95vw"
             className="object-cover opacity-60 mix-blend-screen"
           />
-          <div className="relative z-10 flex flex-col items-center gap-4">
-            <Reveal>
-              <p className="type-eyebrow text-sky">TRUST &amp; SECURITY</p>
-            </Reveal>
-            <WordReveal
-              as="h3"
-              text="Secure, Enterprise-Grade AI Automation"
-              className="type-h2 text-white max-w-xl"
-              onScroll
-            />
-            <Reveal delay={200}>
-              <p className="type-lead text-white/70 max-w-md">
-                Privacy-first agents designed for secure local deployments and scale.
-              </p>
-            </Reveal>
+          <div className="relative z-10 flex flex-col items-center gap-10 text-center">
+            <div className="flex flex-col items-center gap-4">
+              <Reveal>
+                <p className="type-eyebrow text-sky">{traction.eyebrow}</p>
+              </Reveal>
+              <WordReveal
+                as="h3"
+                text={traction.heading}
+                className="type-h2 text-white max-w-xl"
+                onScroll
+              />
+              <Reveal delay={200}>
+                <p className="type-lead text-white/70 max-w-lg">
+                  {traction.sub}
+                </p>
+              </Reveal>
+            </div>
+
+            <div className="grid w-full gap-y-8 md:grid-cols-3">
+              {traction.stats.map((s, i) => (
+                <Reveal key={s.label} delay={i * 100} className="flex flex-col gap-1">
+                  <p className="type-display text-white">{s.value}</p>
+                  <p className="type-eyebrow text-white/60">{s.label}</p>
+                </Reveal>
+              ))}
+            </div>
+
+            <div className="flex w-full flex-col gap-4 border-t border-white/15 pt-8">
+              <Reveal>
+                <p className="type-eyebrow text-white/60">
+                  {traction.partnershipsLabel}
+                </p>
+              </Reveal>
+              <div className="grid gap-6 text-left md:grid-cols-3 md:text-center">
+                {traction.partnerships.map((p, i) => (
+                  <Reveal key={p.name} delay={i * 100} className="flex flex-col gap-1">
+                    <p className="type-h3 text-white">{p.name}</p>
+                    <p className="type-body text-white/60">{p.body}</p>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -46,10 +73,10 @@ export function CtaBand() {
   return (
     <section className="gutter bg-ink-deep py-20 text-white md:py-28">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 text-center">
-        {/* DRAFT: Pending Rahul's approval */}
+        {/* DRAFT: Pending Rahul's approval (audience per deck Slide 1/3) */}
         <WordReveal
           as="h2"
-          text="Ready to automate your business workflows?"
+          text="Ready to automate your finance workflows?"
           className="type-h2 max-w-2xl"
           onScroll
         />

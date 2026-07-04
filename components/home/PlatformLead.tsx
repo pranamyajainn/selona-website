@@ -36,12 +36,17 @@ export function PlatformLead() {
             text={platformLead.heading}
             className="type-statement max-w-2xl text-white"
           />
+          <Reveal delay={150}>
+            <p className="type-lead max-w-2xl text-white/70">
+              {platformLead.sub}
+            </p>
+          </Reveal>
         </div>
 
         <Reveal delay={200} className="w-full">
           <Image
             src={platformLead.image}
-            alt="Selona's Context Accelerator: six-stage overview showing Build Context, Usecases, Input Data, Output, Skills & Plugins, and Library"
+            alt="ThinkAIWork workspace: six-stage overview showing Build Context, Usecases, Input Data, Output, Skills & Plugins, and Library"
             width={2880}
             height={1144}
             sizes="(min-width: 1024px) 960px, 100vw"
