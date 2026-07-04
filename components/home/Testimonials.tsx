@@ -40,7 +40,7 @@ export function Testimonials() {
               delay={i * 100}
               className="rounded-[24px] border border-line bg-paper p-8 md:p-10"
             >
-              <p className="type-lead">{t.quote}</p>
+              <p className="type-lead italic">{t.quote}</p>
               <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-line bg-tint/60 px-4 py-2">
                 <span className="text-ink">
                   <PersonIcon />
