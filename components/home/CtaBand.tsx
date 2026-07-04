@@ -67,7 +67,7 @@ export function CtaBand() {
             href={site.bookingUrl}
             target="_blank"
             rel="noopener"
-            className="text-sm font-medium text-white/50 hover:text-white transition-colors duration-200 underline underline-offset-4"
+            className="inline-flex min-h-[44px] items-center text-sm font-medium text-white/50 hover:text-white transition-colors duration-200 underline underline-offset-4"
           >
             Looking for a sales conversation? Book a consultation &rarr;
           </a>

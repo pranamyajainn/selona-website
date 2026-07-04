@@ -149,11 +149,7 @@ export function Hero() {
 
         <h1
           ref={headlineRef}
-          className="type-h1"
-          style={{
-            perspective: "1600px",
-            transformStyle: "preserve-3d",
-          }}
+          className="type-h1 hero-3d"
           aria-label={site.headline}
         >
           {words.map((word, i) => (
@@ -161,7 +157,6 @@ export function Hero() {
               <span
                 className="word-wrapper inline-block overflow-hidden"
                 style={{
-                  transformStyle: "preserve-3d",
                   paddingTop: "0.25em",
                   paddingBottom: "0.28em",
                   marginTop: "-0.25em",
@@ -171,10 +166,7 @@ export function Hero() {
               >
                 <span
                   className="word-inner inline-block will-change-[transform,opacity,filter]"
-                  style={{
-                    transformStyle: "preserve-3d",
-                    opacity: 0,
-                  }}
+                  style={{ opacity: 0 }}
                 >
                   {word}
                 </span>

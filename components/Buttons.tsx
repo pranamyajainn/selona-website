@@ -36,7 +36,11 @@ export function SecondaryButton({
   return (
     <Link
       href={href}
-      className={`btn-premium-secondary ${className}`}
+      // backdrop-blur-md rather than backdrop-filter inside
+      // .btn-premium-secondary: Lightning CSS collapses the plain declaration
+      // to -webkit- only and Chromium then drops it; the utility's var() form
+      // survives compilation.
+      className={`btn-premium-secondary backdrop-blur-md ${className}`}
     >
       {children}
     </Link>

@@ -78,6 +78,16 @@ body {
   line-height: 1.6;
   letter-spacing: -0.01em;
 }
+/* Oversized promoted stat. Deliberately its own role: pairing .type-display
+   with text-7xl utilities silently loses (unlayered CSS beats @layer
+   utilities), which capped the stat at 32px. */
+.type-stat {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(72px, 17vw, 128px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
 .type-eyebrow {
   font-family: var(--font-display);
   font-weight: 500;
@@ -207,6 +217,20 @@ body {
   }
 }
 
+/* Hero headline 3D entrance is desktop-only: below 640px the GSAP fallback
+   animates translateY/opacity, so perspective and preserve-3d must not
+   apply there (original spec: 2D only under 640px). */
+@media (min-width: 640px) {
+  .hero-3d {
+    perspective: 1600px;
+    transform-style: preserve-3d;
+  }
+  .hero-3d .word-wrapper,
+  .hero-3d .word-inner {
+    transform-style: preserve-3d;
+  }
+}
+
 /* Premium Primary Button Redesign */
 .btn-premium-primary {
   display: inline-flex;
@@ -244,7 +268,9 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid transparent;
-  background: rgba(255, 255, 255, 0.1) padding-box, 
+  /* Fill layer must be a gradient: a flat <color> is invalid in a non-final
+     background layer, so the whole fill gets dropped at parse time. */
+  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)) padding-box,
               linear-gradient(to bottom, rgba(44, 79, 125, 0.25), rgba(44, 79, 125, 0.05)) border-box;
   color: var(--color-ink);
   transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease, color 0.3s ease;
@@ -252,7 +278,8 @@ body {
   text-decoration: none;
 }
 .btn-premium-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.18);
+  background: linear-gradient(rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.18)) padding-box,
+              linear-gradient(to bottom, rgba(44, 79, 125, 0.25), rgba(44, 79, 125, 0.05)) border-box;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 .btn-premium-secondary:active {
@@ -263,11 +290,12 @@ body {
 .btn-premium-secondary.text-white,
 [class*="bg-ink"] .btn-premium-secondary {
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.08) padding-box, 
+  background: linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)) padding-box,
               linear-gradient(to bottom, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.05)) border-box;
 }
 .btn-premium-secondary.text-white:hover,
 [class*="bg-ink"] .btn-premium-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+  background: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)) padding-box,
+              linear-gradient(to bottom, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.05)) border-box;
 }
 

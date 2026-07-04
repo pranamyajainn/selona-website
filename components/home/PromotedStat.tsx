@@ -17,9 +17,7 @@ export function PromotedStat() {
       />
       <div className="gutter relative z-10 mx-auto flex max-w-4xl flex-col items-center justify-center gap-4">
         <Reveal>
-          <span className="type-display text-white text-7xl md:text-9xl font-bold tracking-tight block">
-            40%
-          </span>
+          <span className="type-stat block text-white">40%</span>
         </Reveal>
         <WordReveal
           as="p"

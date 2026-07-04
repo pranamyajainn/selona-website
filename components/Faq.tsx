@@ -55,7 +55,10 @@ export function Faq() {
 
         <p className="type-body text-center text-body-60">
           Feel free to mail us for any enquiries :{" "}
-          <a href={`mailto:${site.email}`} className="text-action hover:text-sky">
+          <a
+            href={`mailto:${site.email}`}
+            className="inline-flex min-h-[44px] items-center align-middle text-action hover:text-sky"
+          >
             {site.email}
           </a>
         </p>
