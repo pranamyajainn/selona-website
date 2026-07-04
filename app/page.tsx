@@ -6,6 +6,7 @@ import { PlatformWalkthrough } from "@/components/home/PlatformWalkthrough";
 import { Testimonials } from "@/components/home/Testimonials";
 import { Services } from "@/components/home/Services";
 import { Journey } from "@/components/home/Journey";
+import { PromotedStat } from "@/components/home/PromotedStat";
 import { Credentials } from "@/components/home/Credentials";
 import { Ticker } from "@/components/home/Ticker";
 import { RatingsPlaceholder, CtaBand } from "@/components/home/CtaBand";
@@ -14,7 +15,7 @@ import { Faq } from "@/components/Faq";
 
 // Section order mirrors the confirmed Liminary structural map:
 // hero, statement, claim/proof, [product walkthrough], [testimonials],
-// narrative steps, switcher, card wall, ticker band, ratings band
+// narrative steps, promoted stat, switcher, card wall, ticker band, ratings band
 // (placeholder), CTA, posts/updates, FAQ, footer. The product walkthrough
 // sits right after About (which makes the claim) and before Services
 // (which covers the broader offering), so it proves the claim with the
@@ -30,6 +31,7 @@ export default function Home() {
       <PlatformWalkthrough />
       <Testimonials />
       <Journey />
+      <PromotedStat />
       <Services />
       <Credentials />
       <Ticker />

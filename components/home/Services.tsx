@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
 import { services } from "@/lib/content";
 
@@ -72,13 +73,24 @@ export function Services() {
             ))}
           </div>
 
-          <div
-            role="tabpanel"
-            className="min-h-40 rounded-2xl border border-line bg-tint/50 p-8 md:p-12"
+          <Reveal
+            key={current.name}
+            className="grid gap-8 rounded-2xl border border-line bg-tint/50 p-6 md:grid-cols-2 md:items-center md:p-10"
           >
-            <h3 className="type-h3 mb-3">{current.name}</h3>
-            <p className="type-lead max-w-2xl text-body-60">{current.body}</p>
-          </div>
+            <div className="flex flex-col gap-3 order-2 md:order-1">
+              <h3 className="type-h3">{current.name}</h3>
+              <p className="type-lead text-body-60">{current.body}</p>
+            </div>
+            <div className="relative order-1 aspect-[3/2] w-full overflow-hidden rounded-xl border border-line bg-paper shadow-sm md:order-2">
+              <Image
+                src={current.image}
+                alt={`${current.name} - Selona AI solutions`}
+                fill
+                sizes="(min-width: 810px) 480px, 100vw"
+                className="object-cover"
+              />
+            </div>
+          </Reveal>
         </Reveal>
       </div>
     </section>

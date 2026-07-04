@@ -83,18 +83,22 @@ export const services = [
   {
     name: "AI Consulting",
     body: "Identification of AI Use Cases, AI Architectural Consulting, Small Language Models",
+    image: "/services/ai-consulting.webp",
   },
   {
     name: "AI Agent Development",
     body: "We develop AI-driven Agents with advanced cognitive technologies to elevate customer support and automate business operations.",
+    image: "/services/ai-agent-development.webp",
   },
   {
     name: "AI Talent",
     body: "Global Talent, Gig Economy workers, Computer Science Graduates, University associations",
+    image: "/services/ai-talent.webp",
   },
   {
     name: "Agentic Business Process Platform",
     body: "Workflow Automation, Integration, Document Analysis, Edge and Privacy first applications",
+    image: "/product/overview-a.webp",
   },
 ];
 
@@ -124,16 +128,19 @@ export const projects = [
     number: "01",
     name: "Cerebro",
     body: "It is a lead intelligence platform powered by Agentic AI. Selona led end-to-end development from design to AI integration and beta testing, readying it for scale.",
+    image: "/credentials/cerebro.webp",
   },
   {
     number: "02",
     name: "Wyzr",
     body: "It is an AI CFO platform for micro-SMEs. Selona drove its redesign, AI validation, and workflows.",
+    image: "/credentials/wyzr.webp",
   },
   {
     number: "03",
     name: "Sustaintel",
     body: "It is a Digital Sustainability Stack builder for enterprises. Selona designed and built the AI-based UI/UX frontend for Sustaintel's internal GRM Platform.",
+    image: "/credentials/sustaintel.webp",
   },
 ];
 
