@@ -56,7 +56,7 @@ export function CtaBand() {
           <PrimaryButton href="/contact">{site.ctaPrimary}</PrimaryButton>
           <SecondaryButton
             href="/#services"
-            className="border-white/30 text-white hover:bg-white/10"
+            className="text-white"
           >
             {site.ctaSecondary}
           </SecondaryButton>

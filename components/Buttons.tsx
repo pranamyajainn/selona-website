@@ -17,7 +17,7 @@ export function PrimaryButton({
       href={href}
       target={external(href) ? "_blank" : undefined}
       rel={external(href) ? "noopener" : undefined}
-      className={`inline-flex items-center justify-center rounded-full bg-action px-6 py-3 font-medium text-sm text-white transition-colors duration-200 hover:bg-action-hover ${className}`}
+      className={`btn-premium-primary ${className}`}
     >
       {children}
     </Link>
@@ -36,7 +36,7 @@ export function SecondaryButton({
   return (
     <Link
       href={href}
-      className={`inline-flex items-center justify-center rounded-full border border-line bg-transparent px-6 py-3 font-medium text-sm text-ink transition-colors duration-200 hover:bg-tint ${className}`}
+      className={`btn-premium-secondary ${className}`}
     >
       {children}
     </Link>

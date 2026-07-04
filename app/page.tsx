@@ -10,7 +10,6 @@ import { PromotedStat } from "@/components/home/PromotedStat";
 import { Credentials } from "@/components/home/Credentials";
 import { Ticker } from "@/components/home/Ticker";
 import { RatingsPlaceholder, CtaBand } from "@/components/home/CtaBand";
-import { Updates } from "@/components/home/Updates";
 import { Faq } from "@/components/Faq";
 
 // Section order mirrors the confirmed Liminary structural map:
@@ -37,7 +36,6 @@ export default function Home() {
       <Ticker />
       <RatingsPlaceholder />
       <CtaBand />
-      <Updates />
       <Faq />
     </>
   );

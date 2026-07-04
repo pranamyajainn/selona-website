@@ -206,3 +206,68 @@ body {
     transition: none;
   }
 }
+
+/* Premium Primary Button Redesign */
+.btn-premium-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: #ffffff;
+  border: 1px solid transparent;
+  background: linear-gradient(#247cf0, #247cf0) padding-box, 
+              linear-gradient(135deg, #247cf0 0%, rgba(36, 124, 240, 0) 100%) border-box;
+  box-shadow: 0 0 16px rgba(36, 124, 240, 0.25);
+  transition: box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-premium-primary:hover {
+  box-shadow: 0 0 24px rgba(36, 124, 240, 0.55);
+}
+.btn-premium-primary:active {
+  transform: scale(0.98);
+}
+
+/* Premium Secondary Glass Button Redesign */
+.btn-premium-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.1) padding-box, 
+              linear-gradient(to bottom, rgba(44, 79, 125, 0.25), rgba(44, 79, 125, 0.05)) border-box;
+  color: var(--color-ink);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease, color 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-premium-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+.btn-premium-secondary:active {
+  transform: scale(0.98);
+}
+
+/* Automatic context shifting for dark background usage (like CtaBand, Footer, etc.) */
+.btn-premium-secondary.text-white,
+[class*="bg-ink"] .btn-premium-secondary {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08) padding-box, 
+              linear-gradient(to bottom, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.05)) border-box;
+}
+.btn-premium-secondary.text-white:hover,
+[class*="bg-ink"] .btn-premium-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
