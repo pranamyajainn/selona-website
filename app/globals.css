@@ -33,6 +33,15 @@ body {
 }
 
 /* Display type roles, scale carried from the Liminary structural map */
+/* Hero display role: short headline earns a true display size (the generic
+   type-h1 tops out at 40px, which reads as body-adjacent in the hero). */
+.type-hero {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(40px, 6vw, 76px);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+}
 .type-h1 {
   font-family: var(--font-display);
   font-weight: 700;

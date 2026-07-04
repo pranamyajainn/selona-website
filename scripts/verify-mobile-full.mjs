@@ -263,13 +263,13 @@ for (const w of widths) {
   await page.screenshot({ path: `${outDir}/promoted-stat-${w}.png` });
 
   // ---- CTA BAND ----
-  const ctaBand = page.locator('section', { hasText: 'Ready to automate your business workflows' }).first();
+  const ctaBand = page.locator('section', { hasText: 'Ready to automate your finance workflows' }).first();
   await ctaBand.scrollIntoViewIfNeeded();
   await page.waitForTimeout(600);
   W.ctaBand = await page.evaluate((rectSrc) => {
     const rectInfo = eval(rectSrc);
     const sec = [...document.querySelectorAll('section')].find((s) =>
-      s.textContent.includes('Ready to automate your business workflows'),
+      s.textContent.includes('Ready to automate your finance workflows'),
     );
     if (!sec) return { found: false };
     const primary = sec.querySelector('.btn-premium-primary');

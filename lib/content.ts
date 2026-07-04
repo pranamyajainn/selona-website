@@ -5,11 +5,13 @@
 export const site = {
   email: "info@selona.ai",
   bookingUrl: "https://meetings-eu1.hubspot.com/rahul4",
-  badge: "AI WORKSPACE FOR FINANCE TEAMS",
-  // DRAFT: Pending Rahul's approval (audience per deck Slide 1/3)
-  headline: "ThinkAIWork automates reporting, reconciliations, and data workflows for finance teams and fractional CFOs",
-  // DRAFT: Pending Rahul's approval (derived from deck Slide 1)
-  subheadline: "The AI-agnostic workspace that turns controlled inputs into structured, auditable outputs.",
+  // Hero copy pared to the Liminary pattern (short display headline, one
+  // subline carrying product + audience + value, no eyebrow). Headline is
+  // verbatim from the deck's solution slide (Slide 3).
+  headline: "You stay in control.",
+  // DRAFT: Pending Rahul's approval (assembled from deck Slide 1/3 language)
+  subheadline:
+    "ThinkAIWork is the AI workspace for finance teams and fractional CFOs — turning controlled inputs into auditable outputs.",
   // DRAFT: Pending Rahul's approval (audience per deck Slide 1/3)
   mission:
     "ThinkAIWork gives finance teams and fractional CFOs a controlled AI workspace: custom contexts and automated workflows without technical complexity.",

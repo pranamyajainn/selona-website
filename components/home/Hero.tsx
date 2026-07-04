@@ -105,7 +105,7 @@ export function Hero() {
   const words = site.headline.split(" ");
 
   return (
-    <section className="gutter relative isolate flex min-h-[560px] items-center overflow-hidden pt-40 pb-20 md:min-h-[640px] md:pt-48 md:pb-28">
+    <section className="gutter relative isolate flex min-h-[78svh] items-center overflow-hidden pt-36 pb-24 md:min-h-[88svh] md:pt-40 md:pb-32">
       <video
         aria-hidden="true"
         autoPlay
@@ -142,14 +142,12 @@ export function Hero() {
         }}
       />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-2xl flex-col items-center gap-5 text-center">
-        <Reveal>
-          <p className="type-eyebrow text-ink">{site.badge}</p>
-        </Reveal>
-
+      {/* Liminary hero pattern: one short display headline, one subline,
+          two CTAs — no eyebrow, so nothing competes with the headline. */}
+      <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-col items-center gap-6 text-center">
         <h1
           ref={headlineRef}
-          className="type-h1 hero-3d"
+          className="type-hero hero-3d text-balance"
           aria-label={site.headline}
         >
           {words.map((word, i) => (
@@ -179,12 +177,12 @@ export function Hero() {
         <WordReveal
           as="p"
           text={site.subheadline}
-          className="type-lead max-w-lg text-body-60"
+          className="type-lead max-w-xl text-balance text-body-60"
           startDelay={400}
         />
         <Reveal
           delay={700}
-          className="flex flex-wrap items-center justify-center gap-3 pt-2"
+          className="flex flex-wrap items-center justify-center gap-3 pt-3"
         >
           <PrimaryButton href="/contact">{site.ctaPrimary}</PrimaryButton>
           <SecondaryButton href="/#platform">
