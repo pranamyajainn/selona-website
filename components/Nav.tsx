@@ -52,24 +52,20 @@ export function Nav() {
             </Link>
           ))}
         </nav>
-        <a
-          href={site.bookingUrl}
-          target="_blank"
-          rel="noopener"
+        <Link
+          href="/contact"
           className="hidden rounded-full bg-action px-5 py-2.5 text-sm font-medium text-white transition-colors duration-200 hover:bg-action-hover md:inline-flex"
         >
           {site.ctaPrimary}
-        </a>
+        </Link>
 
         <div className="flex items-center gap-3 md:hidden">
-          <a
-            href={site.bookingUrl}
-            target="_blank"
-            rel="noopener"
+          <Link
+            href="/contact"
             className="flex min-h-[44px] items-center rounded-full bg-action px-4 text-xs font-medium text-white"
           >
             {site.ctaPrimary}
-          </a>
+          </Link>
           <button
             type="button"
             aria-label={open ? "Close menu" : "Open menu"}

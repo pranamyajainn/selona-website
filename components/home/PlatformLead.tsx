@@ -8,7 +8,7 @@ import { platformLead } from "@/lib/content";
 // negative space, matching how Liminary presents its own product shot.
 export function PlatformLead() {
   return (
-    <section className="relative isolate overflow-hidden bg-ink-deep py-20 md:py-28">
+    <section id="platform" className="relative isolate overflow-hidden bg-ink-deep py-20 md:py-28 scroll-mt-28">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"

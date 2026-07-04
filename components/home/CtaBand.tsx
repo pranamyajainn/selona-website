@@ -46,20 +46,31 @@ export function CtaBand() {
   return (
     <section className="gutter bg-ink-deep py-20 text-white md:py-28">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 text-center">
+        {/* DRAFT: Pending Rahul's approval */}
         <WordReveal
           as="h2"
-          text="Have questions or need any help? We're here to help you with that"
+          text="Ready to automate your business workflows?"
           className="type-h2 max-w-2xl"
           onScroll
         />
         <Reveal className="flex flex-wrap items-center justify-center gap-3">
           <PrimaryButton href="/contact">{site.ctaPrimary}</PrimaryButton>
           <SecondaryButton
-            href="/#services"
+            href="/#platform"
             className="text-white"
           >
             {site.ctaSecondary}
           </SecondaryButton>
+        </Reveal>
+        <Reveal delay={300} className="mt-4">
+          <a
+            href={site.bookingUrl}
+            target="_blank"
+            rel="noopener"
+            className="text-sm font-medium text-white/50 hover:text-white transition-colors duration-200 underline underline-offset-4"
+          >
+            Looking for a sales conversation? Book a consultation &rarr;
+          </a>
         </Reveal>
         <Reveal as="p" className="type-body text-white/60">
           Feel free to mail us for any enquiries : {site.email}

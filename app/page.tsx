@@ -24,14 +24,13 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Mission />
-      <About />
       <PlatformLead />
       <PlatformWalkthrough />
-      <Testimonials />
-      <Journey />
+      <Mission />
+      <About />
       <PromotedStat />
-      <Services />
+      <Journey />
+      <Testimonials />
       <Credentials />
       <Ticker />
       <RatingsPlaceholder />

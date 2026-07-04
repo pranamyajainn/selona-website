@@ -8,7 +8,8 @@ export function Journey() {
       <div className="mx-auto flex max-w-6xl flex-col gap-12">
         <div className="flex flex-col gap-4">
           <Reveal>
-            <p className="type-eyebrow text-ink">Engagement Journey</p>
+            {/* DRAFT: Pending Rahul's approval */}
+            <p className="type-eyebrow text-ink">Deployment Journey</p>
           </Reveal>
           <WordReveal
             as="h2"

@@ -6,13 +6,18 @@ export const site = {
   email: "info@selona.ai",
   bookingUrl: "https://meetings-eu1.hubspot.com/rahul4",
   badge: "AI AUTOMATION FOR BUSINESS PROCESSES",
-  headline: "Built with AI, Powered by AI Native Talent",
+  // DRAFT: Pending Rahul's approval
+  headline: "ThinkAIWork automates your business reporting, reconciliations, and data workflows with custom context",
+  // DRAFT: Pending Rahul's approval
+  subheadline: "Automate report generation, financial reconciliation, and analysis with custom-built data context.",
+  // DRAFT: Pending Rahul's approval
   mission:
-    "Our mission is to make AI automation accessible to every business, regardless of size or technical expertise.",
-  ctaPrimary: "Book a consultation",
-  ctaSecondary: "Explore solutions",
+    "ThinkAIWork simplifies AI automation, enabling businesses to build custom contexts and run workflows without technical complexity.",
+  ctaPrimary: "Request a demo",
+  ctaSecondary: "Explore Platform",
+  // DRAFT: Pending Rahul's approval
   footerTagline:
-    "Build with AI, Powered by AI Native Talent, Delivered for the AI Economy",
+    "ThinkAIWork: The AI Native platform automating business analysis, custom context curation, and process workflows.",
 };
 
 // Product walkthrough: real screens from Selona's Context Accelerator product
@@ -102,44 +107,46 @@ export const services = [
   },
 ];
 
+// DRAFT: Pending Rahul's approval
 export const journey = [
   {
     step: "01",
-    name: "Strategy",
-    title: "Moving from AI absent to AI native",
-    body: "Identify high-impact AI use cases and align them with the company's product, data, and operational strategy.",
+    name: "Setup",
+    title: "Import and configure your data schemas",
+    body: "ThinkAIWork integrates raw datasets, company policies, and voice guidelines to construct a high-fidelity context foundation.",
   },
   {
     step: "02",
-    name: "Transformation",
-    title: "Drive measurable ROI through change & automation",
-    body: "Use AI to simplify workflows, improve processes with real-time insights, and keep teams improving through regular feedback.",
+    name: "Automation",
+    title: "Launch pre-built business workflows",
+    body: "ThinkAIWork runs automated tasks, from complex VAT reconciliations to board decks, grounded directly in your custom data.",
   },
   {
     step: "03",
-    name: "Engineering",
-    title: "Deliver Output / Outcome, not hours",
-    body: "Deliver features faster through agile POD (product oriented delivery) teams, integrate AI across product and tech for scalable performance, and ensure every release delivers clear value.",
+    name: "Scaling",
+    title: "Extend capabilities with skills and plugins",
+    body: "ThinkAIWork scales across teams via slash commands and custom skill packs, constantly refining context for faster, sharper outputs.",
   },
 ];
 
+// DRAFT: Pending Rahul's approval
 export const projects = [
   {
     number: "01",
     name: "Cerebro",
-    body: "It is a lead intelligence platform powered by Agentic AI. Selona led end-to-end development from design to AI integration and beta testing, readying it for scale.",
+    body: "Cerebro is a lead intelligence platform powered by Agentic AI. The engineering team behind ThinkAIWork led its end-to-end development from design to AI integration and beta testing, preparing it for scale.",
     image: "/credentials/cerebro.webp",
   },
   {
     number: "02",
     name: "Wyzr",
-    body: "It is an AI CFO platform for micro-SMEs. Selona drove its redesign, AI validation, and workflows.",
+    body: "Wyzr is an AI CFO platform for micro-SMEs, with its redesign, AI validation, and workflows built by the team behind ThinkAIWork.",
     image: "/credentials/wyzr.webp",
   },
   {
     number: "03",
     name: "Sustaintel",
-    body: "It is a Digital Sustainability Stack builder for enterprises. Selona designed and built the AI-based UI/UX frontend for Sustaintel's internal GRM Platform.",
+    body: "Sustaintel is a digital sustainability stack for enterprises. The UI/UX frontend and AI-based GRM platform were engineered by the team behind ThinkAIWork.",
     image: "/credentials/sustaintel.webp",
   },
 ];
@@ -152,18 +159,19 @@ export const sectors = [
   "AI Start ups",
 ];
 
+// DRAFT: Pending Rahul's approval
 export const aboutBullets = [
   {
-    title: "AI Native Talent",
-    body: "Worked extensively on AI and Data Programs",
+    title: "Context Architecture",
+    body: "ThinkAIWork structures raw business files, guidelines, and rules into an active context layer.",
   },
   {
-    title: "Multidisciplinary team",
-    body: "Make smarter moves with accurate, real-time business insights.",
+    title: "Structured Workflows",
+    body: "ThinkAIWork executes automated board decks, audits, and VAT reconciliations instantly.",
   },
   {
-    title: "Pre built Agents",
-    body: "Experience with top AI tools and APIs to fast track any task",
+    title: "Extensible Skills",
+    body: "ThinkAIWork extends via slash commands, plugins, and custom tool integrations.",
   },
 ];
 
@@ -200,26 +208,28 @@ export const careers = [
   },
 ];
 
+// DRAFT: Pending Rahul's approval
+// FAQs kept general and directional regarding security, compliance, scaling, and extensibility.
 export const faqs = [
   {
-    q: "What Services does Selona offer?",
-    a: "Selona specializes in Agentic AI and Gen AI solutions that enhance productivity, improve customer support, provide advanced analytics, and ensure better compliance. Our services include AI-driven business transformation, deployment of Agentic AI and Gen AI capabilities, and the development of AI applications tailored to specific business needs. With fixed time based, outcome based engagement Selona can help you embark on the Agentic AI and Gen AI journey.",
+    q: "What is ThinkAIWork?",
+    a: "ThinkAIWork is an Agentic AI platform designed to automate complex business workflows. It enables businesses to build custom data context, configure automated report templates, and run workflows like VAT reconciliation and board deck generation.",
   },
   {
-    q: "What types of AI applications can Selona develop for my business?",
-    a: "Selona can develop variety of AI applications leveraging Agentic AI and Gen AI for data capture, workflow automation, integration, content creation, summarisation and analytics. Our AI solutions can be customized to fit specific business needs, enhancing existing systems or building new applications from scratch.",
+    q: "How does ThinkAIWork automate business workflows?",
+    a: "ThinkAIWork integrates raw datasets, custom rules, and pre-built templates to execute business operations. Users upload their schemas and source files to ground the AI's analysis in accurate numbers.",
   },
   {
-    q: "What makes Selona different from other AI Service providers?",
-    a: "Selona's unique approach combines extensive experience with diverse range of AI tool sets and technologies, including proprietary and open-source Language Models. Our pre-vetted team of domain experts, architects, designers, developers, and project managers ensures a comprehensive and ROI-driven approach to AI implementation, focusing on business transformation rather than just IT or data solutions. Selona also leverages AI in all aspects of service delivery making engagements professional, efficient and economical.",
+    q: "What makes ThinkAIWork different from generic AI tools?",
+    a: "Unlike generic chat interfaces, ThinkAIWork focuses on context acceleration. It uses custom behavior rules, active context libraries, and slash-command plugins to ensure outputs align with enterprise standards.",
   },
   {
-    q: "How does Selona ensure the responsible use of AI?",
-    a: "Selona is committed to responsible AI practices, including fairness, accountability, transparency, reliability, and inclusiveness. We follow guidelines for reliability and safety, comply with accessibility standards, and ensure privacy and security with robust guardrails against misuse.",
+    q: "Does the platform support security and compliance?",
+    a: "Yes. ThinkAIWork is built with security guardrails, supporting private data environments and strict access boundaries to ensure your enterprise information remains protected.",
   },
   {
-    q: "Does Selona provide AI Native talent as well?",
-    a: "Selona provides pre-vetted, remote AI talent based in Europe and India, enabling companies to scale their teams efficiently by leveraging a global talent pool.",
+    q: "Can teams extend ThinkAIWork's capabilities?",
+    a: "Absolutely. ThinkAIWork features an extensible skills and plugins framework, letting teams configure custom skill packs and slash commands to match their operations.",
   },
 ];
 
@@ -276,10 +286,11 @@ export const pricingTiers = [
 // Changelog: selona.ai/changelog currently carries Framer template residue
 // ("OrbAI" entries), which is not Selona content. Entries below are PLACEHOLDER
 // structure awaiting real release notes.
+// DRAFT: Pending Rahul's approval
 export const changelogIntro = {
   eyebrow: "UPDATES",
   heading: "Fresh Takes & Updates",
-  sub: "AI agency that delivers smart solutions built to perform",
+  sub: "Updates and releases for the ThinkAIWork platform",
 };
 
 export const changelogEntries = [
@@ -299,9 +310,7 @@ export const changelogEntries = [
 
 export const navLinks = [
   { label: "About Us", href: "/#about-us" },
-  { label: "Services", href: "/#services" },
-  { label: "Credentials", href: "/#credentials" },
-  { label: "Careers", href: "/apply-now" },
+  { label: "Platform", href: "/#platform" },
   { label: "Pricing", href: "/pricing" },
 ];
 
@@ -310,8 +319,8 @@ export const footerColumns = [
     title: "Company",
     links: [
       { label: "About Us", href: "/#about-us" },
-      { label: "Services & Features", href: "/#services" },
-      { label: "Sector & Credentials", href: "/#credentials" },
+      { label: "Platform Walkthrough", href: "/#platform" },
+      { label: "Case Proofs", href: "/#credentials" },
       { label: "Our Pricing", href: "/pricing" },
     ],
   },
@@ -320,7 +329,7 @@ export const footerColumns = [
     links: [
       { label: "Updates", href: "/changelog" },
       { label: "FAQ's", href: "/#faq" },
-      { label: "Apply Now", href: "/apply-now" },
+      { label: "Careers", href: "/apply-now" },
     ],
   },
   {

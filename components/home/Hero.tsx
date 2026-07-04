@@ -186,7 +186,7 @@ export function Hero() {
 
         <WordReveal
           as="p"
-          text="AI agency that delivers smart solutions built to perform"
+          text={site.subheadline}
           className="type-lead max-w-lg text-body-60"
           startDelay={400}
         />
@@ -195,7 +195,7 @@ export function Hero() {
           className="flex flex-wrap items-center justify-center gap-3 pt-2"
         >
           <PrimaryButton href="/contact">{site.ctaPrimary}</PrimaryButton>
-          <SecondaryButton href="/#services">
+          <SecondaryButton href="/#platform">
             {site.ctaSecondary}
           </SecondaryButton>
         </Reveal>

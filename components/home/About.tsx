@@ -11,9 +11,10 @@ export function About() {
           <Reveal>
             <p className="type-eyebrow text-ink">About us</p>
           </Reveal>
+          {/* DRAFT: Pending Rahul's approval */}
           <WordReveal
             as="h2"
-            text="Partner with an AI agency delivering smart solutions."
+            text="ThinkAIWork: The AI Native platform built to automate business analysis."
             className="type-h2 max-w-2xl"
             onScroll
           />

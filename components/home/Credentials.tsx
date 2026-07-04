@@ -15,9 +15,10 @@ export function Credentials() {
           <Reveal>
             <p className="type-eyebrow text-ink">Credentials</p>
           </Reveal>
+          {/* DRAFT: Pending Rahul's approval */}
           <WordReveal
             as="h2"
-            text="Explore sector that reflect our AI expertise & real world impact"
+            text="Proven engineering: AI products built by the creators of ThinkAIWork"
             className="type-h2 max-w-2xl"
             onScroll
           />

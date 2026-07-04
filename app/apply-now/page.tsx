@@ -7,7 +7,7 @@ import { careers, site } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Apply Now",
-  description: "Apply to join Selona's AI native team.",
+  description: "Join the engineering team behind ThinkAIWork.",
 };
 
 // Built from Selona's own design system; copy migrated from
@@ -20,7 +20,7 @@ export default function ApplyNowPage() {
         <PageHeader
           eyebrow="APPLY NOW"
           heading="Apply"
-          sub="Have questions or need any help? We're here to help you with that"
+          sub="Join our team and build the future of context-driven AI automation."
         />
 
         <div className="mx-auto grid max-w-5xl gap-6 pb-10 md:grid-cols-2">
@@ -43,8 +43,7 @@ export default function ApplyNowPage() {
         <div className="mx-auto grid max-w-5xl gap-6 pb-10 md:grid-cols-2">
           <Reveal className="flex flex-col gap-2 rounded-2xl border border-line bg-tint/50 p-8">
             <p className="type-body text-body-60">
-              Feel free to email me if you have any questions or need more
-              details!
+              Email us directly with questions about our open roles.
             </p>
             <a
               href={`mailto:${site.email}`}
@@ -58,8 +57,7 @@ export default function ApplyNowPage() {
             className="flex flex-col gap-2 rounded-2xl border border-line bg-tint/50 p-8"
           >
             <p className="type-body text-body-60">
-              Feel free to book a call if that&apos;s more convenient and easier
-              for you
+              Book a quick introductory conversation with our talent coordinator.
             </p>
             <a
               href={site.bookingUrl}
