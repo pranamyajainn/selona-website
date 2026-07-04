@@ -225,7 +225,7 @@ export const faqs = [
   },
   {
     q: "Does the platform support security and compliance?",
-    a: "Yes. ThinkAIWork is built with security guardrails, supporting private data environments and strict access boundaries to ensure your enterprise information remains protected.",
+    a: "Yes. Data protection and privacy are built into our design philosophy. Detailed security policies and integration specifications are available upon request.",
   },
   {
     q: "Can teams extend ThinkAIWork's capabilities?",
