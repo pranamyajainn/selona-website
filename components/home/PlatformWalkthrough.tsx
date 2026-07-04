@@ -72,7 +72,7 @@ export function PlatformWalkthrough() {
               {current.cta}&nbsp;&rarr;
             </span>
           </div>
-          <div className="relative order-1 h-64 overflow-hidden rounded-xl border border-line bg-paper shadow-sm md:order-2 md:h-80">
+          <div className="relative order-1 aspect-[3/2] w-full overflow-hidden rounded-xl border border-line bg-paper shadow-sm md:order-2">
             <Image
               src={current.image}
               alt={`${current.name} screen in Selona's Context Accelerator`}
