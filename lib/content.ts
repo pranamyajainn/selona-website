@@ -1,5 +1,5 @@
 // All copy on this site is migrated verbatim from www.selona.ai unless a line
-// is tagged FIRST DRAFT (pending Rahul's review) or PLACEHOLDER in the section
+// is tagged FIRST DRAFT (pending client review) or PLACEHOLDER in the section
 // that renders it. Spelling of the two CTAs is corrected per the client brief.
 
 export const site = {
@@ -9,8 +9,6 @@ export const site = {
   headline: "Built with AI, Powered by AI Native Talent",
   mission:
     "Our mission is to make AI automation accessible to every business, regardless of size or technical expertise.",
-  founderAttribution: "Founder of Selona",
-  founderName: "Rahul Jain",
   ctaPrimary: "Book a consultation",
   ctaSecondary: "Explore solutions",
   footerTagline:
