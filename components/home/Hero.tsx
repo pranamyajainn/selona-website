@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, Fragment } from "react";
 import { WordReveal, Reveal } from "@/components/Reveal";
 import { PrimaryButton, SecondaryButton } from "@/components/Buttons";
 import { site } from "@/lib/content";
@@ -49,7 +49,7 @@ export function Hero() {
             filter: "blur(0px)",
             opacity: 1,
             duration: 0.8,
-            stagger: 0.09,
+            stagger: 0.015,
             ease: "power4.out",
             onComplete: () => {
               gsap.set(targets, { clearProps: "all" });
@@ -57,26 +57,47 @@ export function Hero() {
           }
         );
       } else {
-        // 3D perspective animation for desktop
-        gsap.fromTo(
-          targets,
-          {
-            transform: "translateZ(-400px) scale(0.85)",
-            filter: "blur(12px)",
-            opacity: 0,
-          },
-          {
-            transform: "translateZ(0px) scale(1)",
-            filter: "blur(0px)",
-            opacity: 1,
-            duration: 0.8,
-            stagger: 0.09,
-            ease: "power4.out",
-            onComplete: () => {
-              gsap.set(targets, { clearProps: "all" });
+        // Ensure starting 3D state
+        gsap.set(targets, {
+          transform: "translateZ(-900px) scale(0.55)",
+          filter: "blur(12px)",
+          opacity: 0,
+        });
+
+        // 3D perspective animation for desktop with momentum entry, overshoot, and settling
+        gsap.to(targets, {
+          keyframes: [
+            {
+              // Fast initial approach (40% of duration)
+              transform: "translateZ(-250px) scale(0.85)",
+              filter: "blur(3px)", // Near-sharp by midpoint (40%)
+              opacity: 0.85,
+              ease: "power2.in",
+              duration: 0.32,
             },
-          }
-        );
+            {
+              // Deceleration and scale overshoot (next 45% of duration)
+              transform: "translateZ(30px) scale(1.04)",
+              filter: "blur(0px)",
+              opacity: 1,
+              ease: "power3.out",
+              duration: 0.36,
+            },
+            {
+              // Settle back to 1.0 (final 15% of duration)
+              transform: "translateZ(0px) scale(1)",
+              filter: "blur(0px)",
+              opacity: 1,
+              ease: "power3.out",
+              duration: 0.12,
+            }
+          ],
+          stagger: 0.015, // Near-simultaneous mass entrance
+          duration: 0.8,
+          onComplete: () => {
+            gsap.set(targets, { clearProps: "all" });
+          },
+        });
       }
     });
   }, []);
@@ -102,13 +123,13 @@ export function Hero() {
         <source src="/brand/selona-loop-desktop.mp4" type="video/mp4" />
       </video>
 
-      {/* Extended glow ambient radial gradient layer */}
+      {/* Extended glow ambient radial gradient layer (Wider, softer falloff to reach viewport corners) */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 z-[1]"
         style={{
           background:
-            "radial-gradient(110% 100% at 50% 45%, rgba(255,255,255,0) 0%, rgba(255,255,255,0.25) 45%, rgba(255,255,255,0.65) 75%, rgba(255,255,255,0.9) 92%, #fff 100%)",
+            "radial-gradient(145% 130% at 50% 48%, rgba(255,255,255,0) 0%, rgba(255,255,255,0.08) 55%, rgba(255,255,255,0.28) 78%, rgba(255,255,255,0.72) 94%, #fff 100%)",
         }}
       />
 
@@ -130,21 +151,21 @@ export function Hero() {
           ref={headlineRef}
           className="type-h1"
           style={{
-            perspective: "1200px",
+            perspective: "1600px",
             transformStyle: "preserve-3d",
           }}
           aria-label={site.headline}
         >
           {words.map((word, i) => (
-            <span key={i}>
+            <Fragment key={i}>
               <span
                 className="word-wrapper inline-block overflow-hidden"
                 style={{
                   transformStyle: "preserve-3d",
-                  paddingTop: "0.2em",
-                  paddingBottom: "0.25em",
-                  marginTop: "-0.2em",
-                  marginBottom: "-0.25em",
+                  paddingTop: "0.25em",
+                  paddingBottom: "0.28em",
+                  marginTop: "-0.25em",
+                  marginBottom: "-0.28em",
                   verticalAlign: "bottom",
                 }}
               >
@@ -159,7 +180,7 @@ export function Hero() {
                 </span>
               </span>
               {i < words.length - 1 ? " " : ""}
-            </span>
+            </Fragment>
           ))}
         </h1>
 
