@@ -17,6 +17,63 @@ export const site = {
     "Build with AI, Powered by AI Native Talent, Delivered for the AI Economy",
 };
 
+// Product walkthrough: real screens from Selona's Context Accelerator product
+// (ThinkAIWork), cleaned from raw screen-recording frames. Descriptions are
+// taken verbatim from the product's own on-screen card copy, not invented.
+// Output and Library have no dedicated workspace screen in the source
+// recordings, so their media is a cropped inset of the real overview screen's
+// own card for that stage rather than a fabricated screenshot.
+export const platformLead = {
+  eyebrow: "CONTEXT ACCELERATOR",
+  heading: "Build better context. Get better answers.",
+  image: "/product/overview-a.webp",
+};
+
+export const platformStages = [
+  {
+    step: "01",
+    name: "Build Context",
+    body: "Define your company's voice, KPIs, board communication style, and AI behaviour rules.",
+    cta: "Open Builder",
+    image: "/product/build-context.webp",
+  },
+  {
+    step: "02",
+    name: "Usecases",
+    body: "Choose a pre-built workflow: board deck, VAT reconciliation, audit report, and more.",
+    cta: "Browse Usecases",
+    image: "/product/usecases.webp",
+  },
+  {
+    step: "03",
+    name: "Input Data",
+    body: "Upload datasets, schemas, and source files that ground your analysis in real numbers.",
+    cta: "Manage Files",
+    image: "/product/input-data.webp",
+  },
+  {
+    step: "04",
+    name: "Output",
+    body: "Configure output templates, report formats, and how results are presented.",
+    cta: "Configure Output",
+    image: "/product/output-card.webp",
+  },
+  {
+    step: "05",
+    name: "Skills & Plugins",
+    body: "Create slash commands and upload skill packs to extend your AI analysis workflow.",
+    cta: "Manage Skills",
+    image: "/product/skills-plugins.webp",
+  },
+  {
+    step: "06",
+    name: "Library",
+    body: "Browse saved contexts, past project configurations, and all your assets ready to deploy.",
+    cta: "Open Library",
+    image: "/product/library-card.webp",
+  },
+];
+
 export const stats = [
   { value: "95%", label: "Client satisfaction" },
   { value: "20+", label: "AI specialist" },
@@ -239,7 +296,7 @@ export const navLinks = [
   { label: "About Us", href: "/#about-us" },
   { label: "Services", href: "/#services" },
   { label: "Credentials", href: "/#credentials" },
-  { label: "Careers", href: "/#careers" },
+  { label: "Careers", href: "/apply-now" },
   { label: "Pricing", href: "/pricing" },
 ];
 
@@ -250,7 +307,6 @@ export const footerColumns = [
       { label: "About Us", href: "/#about-us" },
       { label: "Services & Features", href: "/#services" },
       { label: "Sector & Credentials", href: "/#credentials" },
-      { label: "Career", href: "/#careers" },
       { label: "Our Pricing", href: "/pricing" },
     ],
   },

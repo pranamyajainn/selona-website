@@ -120,21 +120,6 @@ body {
   animation: nav-drop 1.1s var(--ease-nav) both;
 }
 
-/* Mobile nav pill: springs up from below, approximating the measured spring */
-@keyframes nav-rise {
-  from {
-    opacity: 0.001;
-    transform: translate(-50%, 150px);
-  }
-  to {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-}
-.nav-rise {
-  animation: nav-rise 1s var(--ease-spring) 0.1s both;
-}
-
 /* Scroll reveal: uniform fade-up, 400ms, matches measured section reveals */
 .reveal {
   opacity: 0.001;
@@ -210,7 +195,6 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .nav-drop,
-  .nav-rise,
   .orbit .satellite-arm,
   .ticker-track {
     animation: none;

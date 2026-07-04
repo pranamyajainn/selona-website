@@ -55,7 +55,7 @@ export function Services() {
                 role="tab"
                 aria-selected={i === active}
                 onClick={() => setActive(i)}
-                className={`relative rounded-full border px-5 py-2.5 text-sm font-medium transition-colors duration-200 ${
+                className={`relative flex min-h-[44px] items-center rounded-full border px-5 py-2.5 text-sm font-medium transition-colors duration-200 ${
                   i === active
                     ? "border-action bg-action text-white"
                     : "border-line bg-transparent text-ink hover:bg-tint"

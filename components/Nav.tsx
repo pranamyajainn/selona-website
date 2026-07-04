@@ -5,12 +5,12 @@ import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
 import { navLinks, site } from "@/lib/content";
 
-// Structure mirrors the verified Liminary nav: a fixed pill at top 20 /
-// inset 100 on desktop with a 1.1s drop-in; on phones a bottom-centered
-// blurred pill that springs up. One deliberate deviation from Liminary
-// (which keeps a transparent nav at all scroll depths): after scrolling,
-// this nav gains a blurred white background so ink links stay readable
-// over the dark CTA band.
+// Fixed pill nav, top-anchored on every breakpoint (moved off Liminary's
+// bottom-pill mobile pattern per client feedback: a bottom nav read as
+// broken rather than a header). Desktop keeps the wide inset pill; mobile
+// keeps the same rounded, blurred visual language and menu open/close
+// behavior, just relocated to the top with safe-area padding for notched
+// devices.
 export function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -23,98 +23,97 @@ export function Nav() {
   }, []);
 
   return (
-    <>
-      <div className="nav-drop fixed top-5 left-4 right-4 z-50 hidden md:left-[60px] md:right-[60px] md:block xl:left-[100px] xl:right-[100px]">
-        <header
-          className={`flex items-center justify-between rounded-full px-6 py-3 transition-all duration-300 ${
-            scrolled
-              ? "border border-line bg-white/70 shadow-sm backdrop-blur-xl"
-              : "border border-transparent bg-transparent"
-          }`}
-          style={scrolled ? { WebkitBackdropFilter: "blur(20px)" } : undefined}
+    <div
+      className="nav-drop fixed inset-x-4 z-50 md:inset-x-[60px] xl:inset-x-[100px]"
+      style={{ top: "max(1.25rem, env(safe-area-inset-top))" }}
+    >
+      <header
+        className={`flex items-center justify-between rounded-full px-4 py-2.5 transition-all duration-300 md:px-6 md:py-3 ${
+          scrolled || open
+            ? "border border-line bg-white/70 shadow-sm backdrop-blur-xl"
+            : "border border-transparent bg-transparent md:bg-transparent"
+        }`}
+        style={
+          scrolled || open ? { WebkitBackdropFilter: "blur(20px)" } : undefined
+        }
+      >
+        <Link href="/" aria-label="Selona home" onClick={() => setOpen(false)}>
+          <Logo className="h-6 w-auto md:h-7" />
+        </Link>
+
+        <nav className="hidden items-center gap-7 md:flex">
+          {navLinks.map((l) => (
+            <Link
+              key={l.label}
+              href={l.href}
+              className="text-sm font-medium text-ink transition-colors duration-200 hover:text-sky"
+            >
+              {l.label}
+            </Link>
+          ))}
+        </nav>
+        <a
+          href={site.bookingUrl}
+          target="_blank"
+          rel="noopener"
+          className="hidden rounded-full bg-action px-5 py-2.5 text-sm font-medium text-white transition-colors duration-200 hover:bg-action-hover md:inline-flex"
         >
-          <Link href="/" aria-label="Selona home">
-            <Logo />
-          </Link>
-          <nav className="flex items-center gap-7">
-            {navLinks.map((l) => (
-              <Link
-                key={l.label}
-                href={l.href}
-                className="text-sm font-medium text-ink transition-colors duration-200 hover:text-sky"
-              >
-                {l.label}
-              </Link>
-            ))}
-          </nav>
+          {site.ctaPrimary}
+        </a>
+
+        <div className="flex items-center gap-3 md:hidden">
           <a
             href={site.bookingUrl}
             target="_blank"
             rel="noopener"
-            className="rounded-full bg-action px-5 py-2.5 text-sm font-medium text-white transition-colors duration-200 hover:bg-action-hover"
+            className="flex min-h-[44px] items-center rounded-full bg-action px-4 text-xs font-medium text-white"
           >
             {site.ctaPrimary}
           </a>
-        </header>
-      </div>
-
-      <div className="nav-rise fixed bottom-[50px] left-1/2 z-50 w-[calc(100vw-32px)] max-w-md md:hidden">
-        <header
-          className="rounded-full border border-line bg-white/70 px-5 py-3 shadow-lg backdrop-blur-xl"
-          style={{ WebkitBackdropFilter: "blur(20px)" }}
-        >
-          <div className="flex items-center justify-between">
-            <Link href="/" aria-label="Selona home" onClick={() => setOpen(false)}>
-              <Logo className="h-6 w-auto" />
-            </Link>
-            <div className="flex items-center gap-3">
-              <a
-                href={site.bookingUrl}
-                target="_blank"
-                rel="noopener"
-                className="rounded-full bg-action px-4 py-2 text-xs font-medium text-white"
-              >
-                {site.ctaPrimary}
-              </a>
-              <button
-                type="button"
-                aria-label={open ? "Close menu" : "Open menu"}
-                aria-expanded={open}
-                onClick={() => setOpen((v) => !v)}
-                className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 rounded-full"
-              >
-                <span
-                  className={`block h-0.5 w-5 bg-ink transition-transform duration-300 ${open ? "translate-y-1 rotate-45" : ""}`}
-                />
-                <span
-                  className={`block h-0.5 w-5 bg-ink transition-transform duration-300 ${open ? "-translate-y-1 -rotate-45" : ""}`}
-                />
-              </button>
-            </div>
-          </div>
-          <div
-            className={`grid transition-[grid-template-rows] duration-300 ${open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
+          <button
+            type="button"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            aria-controls="mobile-nav-menu"
+            onClick={() => setOpen((v) => !v)}
+            className="flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full"
           >
-            <nav className="overflow-hidden">
-              <ul className="flex flex-col gap-1 pt-3 pb-1">
-                {[...navLinks, { label: "Contact Us", href: "/contact" }].map(
-                  (l) => (
-                    <li key={l.label}>
-                      <Link
-                        href={l.href}
-                        onClick={() => setOpen(false)}
-                        className="block rounded-full px-3 py-2 text-sm font-medium text-ink hover:bg-tint"
-                      >
-                        {l.label}
-                      </Link>
-                    </li>
-                  ),
-                )}
-              </ul>
-            </nav>
-          </div>
-        </header>
+            <span
+              className={`block h-0.5 w-5 bg-ink transition-transform duration-300 ${open ? "translate-y-1 rotate-45" : ""}`}
+            />
+            <span
+              className={`block h-0.5 w-5 bg-ink transition-transform duration-300 ${open ? "-translate-y-1 -rotate-45" : ""}`}
+            />
+          </button>
+        </div>
+      </header>
+
+      <div
+        id="mobile-nav-menu"
+        className={`grid overflow-hidden transition-[grid-template-rows] duration-300 md:hidden ${
+          open ? "grid-rows-[1fr] pt-2" : "grid-rows-[0fr]"
+        }`}
+      >
+        <div className="overflow-hidden rounded-3xl border border-line bg-white/90 shadow-lg backdrop-blur-xl">
+          <nav>
+            <ul className="flex flex-col gap-1 p-3">
+              {[...navLinks, { label: "Contact Us", href: "/contact" }].map(
+                (l) => (
+                  <li key={l.label}>
+                    <Link
+                      href={l.href}
+                      onClick={() => setOpen(false)}
+                      className="block min-h-[44px] rounded-full px-4 py-3 text-sm font-medium text-ink hover:bg-tint"
+                    >
+                      {l.label}
+                    </Link>
+                  </li>
+                ),
+              )}
+            </ul>
+          </nav>
+        </div>
       </div>
-    </>
+    </div>
   );
 }
