@@ -105,7 +105,10 @@ export function Hero() {
   const words = site.headline.split(" ");
 
   return (
-    <section className="gutter relative isolate flex min-h-[78svh] items-center overflow-hidden pt-36 pb-24 md:min-h-[88svh] md:pt-40 md:pb-32">
+    // Content-driven height: padding only, no viewport-locked min-height.
+    // The svh lock over-allocated once the headline shrank to four words,
+    // leaving ~200-260px of dead space below the CTAs.
+    <section className="gutter relative isolate flex items-center overflow-hidden pt-36 pb-24 md:pt-48 md:pb-28">
       <video
         aria-hidden="true"
         autoPlay
@@ -135,6 +138,18 @@ export function Hero() {
           background:
             "radial-gradient(145% 130% at 50% 48%, rgba(255,255,255,0) 0%, rgba(255,255,255,0.08) 55%, rgba(255,255,255,0.28) 78%, rgba(255,255,255,0.72) 94%, #fff 100%)",
         }}
+      />
+
+      {/* Edge scrims: the content-driven (shorter) section crops the video
+          mid-ripple, and the radial glow alone no longer reaches white at
+          the top/bottom edges — these melt both edges into the page. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-24 bg-gradient-to-b from-white to-transparent"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-28 bg-gradient-to-t from-white to-transparent"
       />
 
       {/* Grain/noise texture layer consistent with the site's design */}
