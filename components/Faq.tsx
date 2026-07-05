@@ -13,10 +13,10 @@ export function Faq() {
       <div className="mx-auto flex max-w-3xl flex-col gap-10">
         <div className="flex flex-col gap-3 text-center">
           <Reveal as="h2" className="type-h2">
-            Questions? Answers!
+            Frequently asked questions
           </Reveal>
           <Reveal as="p" className="type-lead text-body-60">
-            Find Some quick answers to the most common questions.
+            Find some quick answers to the most common questions.
           </Reveal>
         </div>
 

@@ -294,20 +294,24 @@ export const careers = [
   },
 ];
 
-// DRAFT: Pending Rahul's approval
-// FAQs kept general and directional regarding security, compliance, scaling, and extensibility.
+// Answers rebuilt against the investor deck (Slides 3-4); quoted phrases are
+// verbatim. The security answer is deliberately general: the deck names no
+// certification or standard.
 export const faqs = [
   {
     q: "What is ThinkAIWork?",
-    a: "ThinkAIWork is an Agentic AI workspace built for finance teams and fractional CFOs. It enables them to build custom data context, configure automated report templates, and run workflows like VAT reconciliation and board deck generation.",
+    // Slide 3, verbatim
+    a: "ThinkAIWork is an AI workspace for finance teams that turns controlled inputs into structured, auditable outputs — helping finance functions use AI safely, consistently and with confidence.",
   },
   {
     q: "How does ThinkAIWork automate finance workflows?",
-    a: "ThinkAIWork integrates raw datasets, custom rules, and pre-built templates to execute finance operations. Users upload their schemas and source files to ground the AI's analysis in accurate numbers.",
+    // Slide 4: the six layers, with the deck's own layer descriptions
+    a: "ThinkAIWork is not a black box — it works through six layers, each set up, owned and refined by your team: onboarding and setup, context building, context versioning, token optimization (cutting per-call AI spend by up to 40%, transparently), skills and plugin building, and output templates. You define the format — metrics, calculations, narrative — set by your team, not the AI.",
   },
   {
     q: "What makes ThinkAIWork different from generic AI tools?",
-    a: "Unlike generic chat interfaces, ThinkAIWork focuses on context acceleration. It uses custom behavior rules, active context libraries, and slash-command plugins to ensure outputs align with enterprise standards.",
+    // Slide 4 differentiator + Slide 3 tagline, verbatim
+    a: "You stay in control. The AI learns your business. ThinkAIWork is model-flexible — start on Claude, run Anthropic, OpenAI or local models (Llama, Mistral) without rebuilding context — and it is built against the six structural failures of generic AI in finance described above, from generic output to cluttered context.",
   },
   {
     q: "Does the platform support security and compliance?",
@@ -315,7 +319,8 @@ export const faqs = [
   },
   {
     q: "Can teams extend ThinkAIWork's capabilities?",
-    a: "Absolutely. ThinkAIWork features an extensible skills and plugins framework, letting teams configure custom skill packs and slash commands to match their operations.",
+    // Slide 3/4, verbatim fragments
+    a: "Yes. Skills and plugin building lets teams package recurring tasks as reusable skills — built once, deployed across every workflow. Out-of-box skills provide a plug-and-play head start for generic finance use cases, and a shared library of contexts, skills and files serves the whole function.",
   },
 ];
 
