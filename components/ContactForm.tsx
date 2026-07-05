@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useId, useState, type FormEvent } from "react";
 import { site } from "@/lib/content";
 
 // No form backend was supplied, so submit composes a prefilled email to
@@ -10,59 +10,88 @@ export function ContactForm({
   fields,
   submitLabel = "Submit",
 }: {
-  fields: { name: string; label: string; type?: string; textarea?: boolean }[];
+  fields: {
+    name: string;
+    label: string;
+    type?: string;
+    textarea?: boolean;
+    autoComplete?: string;
+  }[];
   submitLabel?: string;
 }) {
-  const [sent, setSent] = useState(false);
+  const formId = useId();
+  const [status, setStatus] = useState<"idle" | "error" | "success">("idle");
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    const subject = encodeURIComponent(
-      String(
-        data.get("subject") ||
-          data.get("role") ||
-          "ThinkAIWork walkthrough request",
-      ),
-    );
+    const form = e.currentTarget;
+
+    if (!form.checkValidity()) {
+      setStatus("error");
+      form.reportValidity();
+      return;
+    }
+
+    const data = new FormData(form);
+    const subjectText = data.get("workflow")
+      ? "ThinkAIWork walkthrough request"
+      : data.get("subject") ||
+        data.get("role") ||
+        "ThinkAIWork walkthrough request";
+    const subject = encodeURIComponent(String(subjectText));
     const bodyLines = fields.map(
       (f) => `${f.label}: ${String(data.get(f.name) || "")}`,
     );
     const body = encodeURIComponent(bodyLines.join("\n"));
+    setStatus("success");
     window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
-    setSent(true);
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+    <form noValidate onSubmit={handleSubmit} className="flex flex-col gap-5">
       {fields.map((f) => (
-        <label key={f.name} className="flex flex-col gap-1.5">
-          <span className="text-sm font-medium">{f.label}</span>
+        <div key={f.name} className="flex flex-col gap-2">
+          <label
+            htmlFor={`${formId}-${f.name}`}
+            className="text-sm font-medium text-ink-deep"
+          >
+            {f.label}
+          </label>
           {f.textarea ? (
             <textarea
+              id={`${formId}-${f.name}`}
               name={f.name}
               rows={5}
               required
-              className="min-h-[132px] rounded-lg border border-line bg-paper px-4 py-3 text-sm outline-none transition-colors focus:border-sky"
+              aria-invalid={status === "error" ? true : undefined}
+              className="min-h-[132px] rounded-lg border border-line bg-paper px-4 py-3 text-sm leading-6 outline-none transition-colors placeholder:text-body-60/60 focus:border-action"
             />
           ) : (
             <input
+              id={`${formId}-${f.name}`}
               name={f.name}
               type={f.type ?? "text"}
+              autoComplete={f.autoComplete}
               required
-              className="min-h-[44px] rounded-lg border border-line bg-paper px-4 py-3 text-sm outline-none transition-colors focus:border-sky"
+              aria-invalid={status === "error" ? true : undefined}
+              className="min-h-[44px] rounded-lg border border-line bg-paper px-4 py-3 text-sm outline-none transition-colors placeholder:text-body-60/60 focus:border-action"
             />
           )}
-        </label>
+        </div>
       ))}
       <button
         type="submit"
-        className="mt-2 min-h-[44px] rounded-full bg-action px-6 py-3 text-sm font-medium text-white transition-colors duration-200 hover:bg-action-hover"
+        className="mt-1 min-h-[44px] rounded-full bg-ink-deep px-6 py-3 text-sm font-medium text-white shadow-[0_10px_24px_rgba(13,22,48,0.12)] transition-colors duration-200 hover:bg-ink"
       >
         {submitLabel}
       </button>
-      {sent && (
-        <p className="type-body text-body-60">
+      {status === "error" && (
+        <p role="alert" className="type-body text-action">
+          Please complete each field with a valid work email before submitting.
+        </p>
+      )}
+      {status === "success" && (
+        <p role="status" className="type-body text-body-60">
           Your email client should have opened with the details prefilled. If
           not, write to us directly at {site.email}.
         </p>

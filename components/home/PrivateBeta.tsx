@@ -35,6 +35,32 @@ export function PrivateBeta() {
             <p className="type-body text-white/80">{betaProof.feedback}</p>
           </Reveal>
         </div>
+
+        <div className="flex flex-col gap-4 border-t border-line pt-6 lg:col-span-2 md:pt-8">
+          <Reveal>
+            <p className="type-eyebrow text-body-60">
+              Early customer testimonials
+            </p>
+          </Reveal>
+          <div className="grid gap-4 md:grid-cols-2">
+            {betaProof.testimonials.map((testimonial, i) => (
+              <Reveal
+                key={testimonial.attribution}
+                delay={i * 80}
+                className="flex min-h-full flex-col justify-between gap-6 rounded-lg border border-line bg-tint/35 p-5 md:p-6"
+              >
+                <blockquote>
+                  <p className="type-h3 italic text-ink-deep">
+                    “{testimonial.quote}”
+                  </p>
+                </blockquote>
+                <p className="text-sm font-medium text-body-60">
+                  — {testimonial.attribution}
+                </p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

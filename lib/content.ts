@@ -2,9 +2,9 @@ export const site = {
   email: "info@selona.ai",
   bookingUrl: "https://meetings-eu1.hubspot.com/rahul4",
   eyebrow: "ThinkAIWork by Selona",
-  headline: "Finance AI, under your control.",
+  headline: "The control layer for finance AI.",
   subheadline:
-    "A model-agnostic workspace that turns company context, source files, and recurring CFO workflows into structured, auditable outputs.",
+    "ThinkAIWork turns company context, source files, workflows, and templates into structured, auditable outputs, across the AI models your team chooses.",
   mission:
     "ThinkAIWork gives finance teams and fractional CFOs a controlled AI workspace for repeatable, auditable work.",
   ctaPrimary: "Request a demo",
@@ -12,6 +12,13 @@ export const site = {
   footerTagline:
     "ThinkAIWork by Selona — controlled AI workflows for finance teams.",
 };
+
+export const credibilityStrip = [
+  "Private beta",
+  "10 fractional CFOs",
+  "3 partner channels",
+  "Model-agnostic architecture",
+];
 
 export const problems = {
   eyebrow: "THE PROBLEM",
@@ -42,6 +49,35 @@ export const problems = {
     {
       name: "Cluttered context",
       body: "Files, teams, entities, and geographies become impossible to govern.",
+    },
+  ],
+};
+
+export const workflowProof = {
+  eyebrow: "WORKFLOW PROOF",
+  heading: "A finance workflow, end to end.",
+  sub:
+    "Example: VAT/GST reconciliation, grounded in source files and reusable finance context.",
+  steps: [
+    {
+      step: "01",
+      label: "Source file",
+      body: "Upload the VAT report, ledger extract, or reconciliation workbook.",
+    },
+    {
+      step: "02",
+      label: "Company context",
+      body: "Apply entity rules, tax periods, chart of accounts, and review preferences.",
+    },
+    {
+      step: "03",
+      label: "Finance skill",
+      body: "Run the reusable reconciliation workflow with approved model routing.",
+    },
+    {
+      step: "04",
+      label: "Auditable output",
+      body: "Return a structured summary with source links, exceptions, and review notes.",
     },
   ],
 };
@@ -143,7 +179,7 @@ export const trust = {
     "Template-controlled structure",
     "Token budget visibility",
     "Model flexibility",
-    "Role-based access",
+    "Workspace access review",
     "Approval-ready workflows",
     "Security documentation available on request",
   ],
@@ -160,6 +196,18 @@ export const betaProof = {
   ],
   feedback:
     "Early user feedback: ThinkAIWork gives us a clearer audit trail before external review.",
+  testimonials: [
+    {
+      quote:
+        "With ThinkAIWork I can expand beyond my traditional CFO role into operations too.",
+      attribution: "Fractional CFO, early user",
+    },
+    {
+      quote:
+        "The platform truly drives a lot of value — I don’t have to pay premium dollars to auditors anymore.",
+      attribution: "CFO, enterprise pilot",
+    },
+  ],
 };
 
 export const cta = {
@@ -182,6 +230,7 @@ export const pricingTiers = [
   {
     name: "Pilot",
     model: "Start",
+    cta: "Discuss a pilot",
     description: "For one finance team starting with one controlled workflow.",
     features: [
       "Context setup",
@@ -196,6 +245,7 @@ export const pricingTiers = [
   {
     name: "Team",
     model: "Standardise",
+    cta: "Scope workflows",
     description: "For finance teams standardising recurring workflows.",
     features: [
       "Shared context library",
@@ -203,7 +253,7 @@ export const pricingTiers = [
       "Skills and plugin support",
       "Versioning",
       "Token budget controls",
-      "Role-based access",
+      "Workspace access planning",
       "Priority support",
     ],
     highlighted: true,
@@ -211,10 +261,11 @@ export const pricingTiers = [
   {
     name: "Enterprise",
     model: "Scale",
+    cta: "Plan deployment",
     description: "For multi-entity finance teams and partner-led deployments.",
     features: [
       "Custom integrations",
-      "Advanced security review",
+      "Security review support",
       "Model policy configuration",
       "Managed services",
       "Dedicated onboarding",
@@ -230,19 +281,6 @@ export const contactIntro = {
   sub:
     "See how controlled AI workflows can support board reporting, variance analysis, reconciliations, and recurring CFO work.",
 };
-
-export const changelogIntro = {
-  eyebrow: "UPDATES",
-  heading: "Product updates",
-  sub: "No public release notes are available yet.",
-};
-
-export const changelogEntries: {
-  date: string;
-  tag: string;
-  title: string;
-  body: string;
-}[] = [];
 
 export const navLinks = [
   { label: "Platform", href: "/#control-layer" },
@@ -265,7 +303,6 @@ export const footerColumns = [
     links: [
       { label: "Pricing", href: "/pricing" },
       { label: "Contact", href: "/contact" },
-      { label: "Careers", href: "/apply-now" },
       { label: "Privacy", href: "/privacy" },
     ],
   },
@@ -273,7 +310,7 @@ export const footerColumns = [
     title: "Resources",
     links: [
       { label: "FAQs", href: "/#faq" },
-      { label: "Security review", href: "/contact" },
+      { label: "Security review", href: "/security" },
       { label: "Walkthrough", href: "/contact" },
     ],
   },

@@ -44,10 +44,23 @@ export default function ContactPage() {
             <ContactForm
               submitLabel="Request my walkthrough"
               fields={[
-                { name: "name", label: "Name" },
-                { name: "email", label: "Work email", type: "email" },
-                { name: "company", label: "Company" },
-                { name: "role", label: "Role" },
+                { name: "name", label: "Name", autoComplete: "name" },
+                {
+                  name: "email",
+                  label: "Work email",
+                  type: "email",
+                  autoComplete: "email",
+                },
+                {
+                  name: "company",
+                  label: "Company",
+                  autoComplete: "organization",
+                },
+                {
+                  name: "role",
+                  label: "Role",
+                  autoComplete: "organization-title",
+                },
                 {
                   name: "workflow",
                   label: "First workflow you want to automate",

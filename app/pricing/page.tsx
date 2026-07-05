@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
-import { PrimaryButton } from "@/components/Buttons";
 import { CtaBand } from "@/components/home/CtaBand";
 import { pricingIntro, pricingTiers } from "@/lib/content";
 
@@ -44,9 +44,16 @@ export default function PricingPage() {
               >
                 {tier.description}
               </p>
-              <PrimaryButton href="/contact" className="w-full">
-                Request a demo
-              </PrimaryButton>
+              <Link
+                href="/contact"
+                className={`inline-flex min-h-[44px] w-full items-center justify-center rounded-full px-5 text-sm font-medium shadow-[0_10px_24px_rgba(13,22,48,0.10)] transition-colors duration-200 ${
+                  tier.highlighted
+                    ? "bg-white text-ink-deep hover:bg-tint"
+                    : "bg-ink-deep text-white hover:bg-ink"
+                }`}
+              >
+                {tier.cta}
+              </Link>
               <ul className="flex flex-col gap-2.5">
                 {tier.features.map((f) => (
                   <li key={f} className="flex items-start gap-2.5">

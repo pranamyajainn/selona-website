@@ -1,6 +1,8 @@
 import { Hero } from "@/components/home/Hero";
+import { CredibilityStrip } from "@/components/home/CredibilityStrip";
 import { Problems } from "@/components/home/Problems";
 import { ControlMechanism } from "@/components/home/ControlMechanism";
+import { WorkflowProof } from "@/components/home/WorkflowProof";
 import { FinanceLayers } from "@/components/home/FinanceLayers";
 import { UseCases } from "@/components/home/UseCases";
 import { TrustSection } from "@/components/home/TrustSection";
@@ -12,8 +14,10 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <CredibilityStrip />
       <Problems />
       <ControlMechanism />
+      <WorkflowProof />
       <FinanceLayers />
       <UseCases />
       <TrustSection />
