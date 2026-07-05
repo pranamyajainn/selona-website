@@ -113,7 +113,11 @@ export function Hero() {
         loop
         playsInline
         preload="auto"
-        className="pointer-events-none absolute top-1/2 left-1/2 z-0 h-[150%] w-[150%] -translate-x-1/2 -translate-y-1/2 object-cover [filter:brightness(0.75)_grayscale(1)_invert(1)]"
+        // Mobile renders the video at its native landscape aspect (sized by
+        // width) instead of covering the portrait section — object-cover in
+        // a portrait box zooms the 720x406 frame ~4.5x and the droplet reads
+        // as a giant bouncing ball. Desktop keeps the original treatment.
+        className="pointer-events-none absolute top-1/2 left-1/2 z-0 aspect-video h-auto w-[200%] max-w-none -translate-x-1/2 -translate-y-1/2 object-cover [filter:brightness(0.75)_grayscale(1)_invert(1)] [mask-image:linear-gradient(to_bottom,transparent,black_18%,black_82%,transparent)] md:aspect-auto md:h-[150%] md:w-[150%] md:max-w-full md:[mask-image:none]"
       >
         <source
           media="(max-width: 767px)"
