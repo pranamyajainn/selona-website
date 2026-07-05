@@ -10,7 +10,7 @@ export function Reveal({
 }: {
   children: ReactNode;
   className?: string;
-  as?: "div" | "section" | "p" | "h2" | "h3" | "li" | "span";
+  as?: "div" | "section" | "p" | "h1" | "h2" | "h3" | "li" | "span";
   delay?: number;
 }) {
   const ref = useRef<HTMLElement | null>(null);
@@ -26,7 +26,7 @@ export function Reveal({
           io.disconnect();
         }
       },
-      { threshold: 0.2 },
+      { threshold: 0.08 },
     );
     io.observe(el);
     return () => io.disconnect();
@@ -74,7 +74,7 @@ export function WordReveal({
           io.disconnect();
         }
       },
-      { threshold: 0.3 },
+      { threshold: 0.12 },
     );
     io.observe(el);
     return () => io.disconnect();
@@ -95,7 +95,7 @@ export function WordReveal({
             className="word"
             style={
               {
-                "--word-delay": `${startDelay + i * 100}ms`,
+                "--word-delay": `${startDelay + i * 45}ms`,
               } as React.CSSProperties
             }
           >

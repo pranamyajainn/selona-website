@@ -2,15 +2,13 @@ import Link from "next/link";
 import { Logo } from "./Logo";
 import { footerColumns, site } from "@/lib/content";
 
-// Mega-footer structure mirrors the Liminary map: tagline row, link columns,
-// oversized wordmark, bottom bar. All copy is Selona's.
 export function Footer() {
   return (
     <footer className="gutter bg-mist pt-20 pb-28 md:pb-10">
       <div className="mx-auto flex max-w-6xl flex-col gap-14">
         <p className="type-h3 max-w-xl">{site.footerTagline}</p>
 
-        <div className="grid grid-cols-2 gap-10 md:grid-cols-4">
+        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
           {footerColumns.map((col) => (
             <div key={col.title}>
               <h3 className="type-eyebrow mb-4 text-body-60">{col.title}</h3>
@@ -19,7 +17,7 @@ export function Footer() {
                   <li key={l.label}>
                     <Link
                       href={l.href}
-                      className="type-body inline-block min-h-[44px] py-2.5 text-ink transition-colors duration-200 hover:text-sky"
+                      className="type-body inline-flex min-h-[44px] min-w-[44px] items-center py-2.5 text-ink transition-colors duration-200 hover:text-sky"
                     >
                       {l.label}
                     </Link>
@@ -32,7 +30,7 @@ export function Footer() {
             <h3 className="type-eyebrow mb-4 text-body-60">Enquiries</h3>
             <a
               href={`mailto:${site.email}`}
-              className="type-body inline-block min-h-[44px] py-2.5 text-ink transition-colors duration-200 hover:text-sky"
+              className="type-body inline-flex min-h-[44px] min-w-[44px] items-center py-2.5 text-ink transition-colors duration-200 hover:text-sky"
             >
               {site.email}
             </a>
@@ -45,7 +43,7 @@ export function Footer() {
 
         <div className="flex flex-col gap-1 text-sm text-body-60 md:flex-row md:items-center md:justify-between">
           <p className="py-2.5">
-            Selona. AI workspaces for finance teams and fractional CFOs.
+            Selona. Finance control infrastructure for AI.
           </p>
           <div className="flex gap-4">
             <Link
@@ -53,12 +51,6 @@ export function Footer() {
               className="inline-flex min-h-[44px] items-center px-2 hover:text-sky"
             >
               Privacy
-            </Link>
-            <Link
-              href="/changelog"
-              className="inline-flex min-h-[44px] items-center px-2 hover:text-sky"
-            >
-              Updates
             </Link>
           </div>
         </div>

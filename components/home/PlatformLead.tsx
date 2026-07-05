@@ -2,10 +2,6 @@ import Image from "next/image";
 import { Reveal, WordReveal } from "@/components/Reveal";
 import { platformLead } from "@/lib/content";
 
-// Lead shot for the product walkthrough: full-bleed ambient background
-// (Selona's ink-deep + a soft action/sky radial glow) behind the real
-// product screenshot, no bordered card around the image itself, generous
-// negative space, matching how Liminary presents its own product shot.
 export function PlatformLead() {
   return (
     <section id="platform" className="relative isolate overflow-hidden bg-ink-deep py-20 md:py-28 scroll-mt-28">
@@ -46,7 +42,7 @@ export function PlatformLead() {
         <Reveal delay={200} className="w-full">
           <Image
             src={platformLead.image}
-            alt="ThinkAIWork workspace: six-stage overview showing Build Context, Usecases, Input Data, Output, Skills & Plugins, and Library"
+            alt="ThinkAIWork workspace: six-stage overview showing Build Context, Use cases, Input Data, Output, Skills & Plugins, and Library"
             width={2880}
             height={1144}
             sizes="(min-width: 1024px) 960px, 100vw"

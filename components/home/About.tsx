@@ -1,9 +1,6 @@
 import { Reveal, WordReveal } from "@/components/Reveal";
 import { differentiator, features, stats } from "@/lib/content";
 
-// Liminary claim + proof analog: About-us claim with ThinkAIWork's real
-// four-feature grid and differentiator claim (deck Slides 3–4, verbatim),
-// plus the four real stats.
 export function About() {
   return (
     <section id="about-us" className="gutter scroll-mt-28 bg-mist py-20 md:py-28">

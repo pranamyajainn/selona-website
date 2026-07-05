@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef, Fragment } from "react";
-import { WordReveal, Reveal } from "@/components/Reveal";
-import { PrimaryButton, SecondaryButton } from "@/components/Buttons";
+import Link from "next/link";
+import { Reveal } from "@/components/Reveal";
 import { site } from "@/lib/content";
 
 // Matches selona.ai's live hero technique: an oversized video sits absolutely
@@ -13,6 +13,7 @@ import { site } from "@/lib/content";
 // doesn't pay for 4K bytes it will crop and desaturate anyway.
 export function Hero() {
   const headlineRef = useRef<HTMLHeadingElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
     if (!headlineRef.current) return;
@@ -22,6 +23,7 @@ export function Hero() {
     const targets = headlineRef.current.querySelectorAll(".word-inner");
 
     if (prefersReducedMotion) {
+      videoRef.current?.pause();
       // Instantly visible
       targets.forEach((el) => {
         (el as HTMLElement).style.opacity = "1";
@@ -105,11 +107,9 @@ export function Hero() {
   const words = site.headline.split(" ");
 
   return (
-    // Content-driven height: padding only, no viewport-locked min-height.
-    // The svh lock over-allocated once the headline shrank to four words,
-    // leaving ~200-260px of dead space below the CTAs.
-    <section className="gutter relative isolate flex items-center overflow-hidden pt-36 pb-24 md:pt-48 md:pb-28">
+    <section className="gutter relative isolate flex min-h-[82svh] items-center overflow-hidden pt-28 pb-20 md:min-h-[86svh] md:pt-36 md:pb-24">
       <video
+        ref={videoRef}
         aria-hidden="true"
         autoPlay
         muted
@@ -130,7 +130,6 @@ export function Hero() {
         <source src="/brand/selona-loop-desktop.mp4" type="video/mp4" />
       </video>
 
-      {/* Extended glow ambient radial gradient layer (Wider, softer falloff to reach viewport corners) */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 z-[1]"
@@ -139,10 +138,6 @@ export function Hero() {
             "radial-gradient(145% 130% at 50% 48%, rgba(255,255,255,0) 0%, rgba(255,255,255,0.08) 55%, rgba(255,255,255,0.28) 78%, rgba(255,255,255,0.72) 94%, #fff 100%)",
         }}
       />
-
-      {/* Edge scrims: the content-driven (shorter) section crops the video
-          mid-ripple, and the radial glow alone no longer reaches white at
-          the top/bottom edges — these melt both edges into the page. */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-24 bg-gradient-to-b from-white to-transparent"
@@ -161,9 +156,13 @@ export function Hero() {
         }}
       />
 
-      {/* Liminary hero pattern: one short display headline, one subline,
-          two CTAs — no eyebrow, so nothing competes with the headline. */}
-      <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-col items-center gap-6 text-center">
+      <div className="relative z-10 mx-auto flex w-full max-w-[900px] flex-col items-center gap-6 text-center md:gap-7">
+        <Reveal delay={150}>
+          <p className="inline-flex min-h-[40px] items-center rounded-full border border-line bg-white/66 px-4 text-sm font-medium text-ink shadow-sm backdrop-blur-md">
+            {site.eyebrow}
+          </p>
+        </Reveal>
+
         <h1
           ref={headlineRef}
           className="type-hero hero-3d text-balance"
@@ -193,20 +192,29 @@ export function Hero() {
           ))}
         </h1>
 
-        <WordReveal
-          as="p"
-          text={site.subheadline}
-          className="type-lead max-w-xl text-balance text-body-60"
-          startDelay={400}
-        />
         <Reveal
-          delay={700}
-          className="flex flex-wrap items-center justify-center gap-3 pt-3"
+          as="p"
+          delay={420}
+          className="type-lead max-w-[660px] text-balance text-body-60"
         >
-          <PrimaryButton href="/contact">{site.ctaPrimary}</PrimaryButton>
-          <SecondaryButton href="/#platform">
-            {site.ctaSecondary}
-          </SecondaryButton>
+          {site.subheadline}
+        </Reveal>
+        <Reveal
+          delay={560}
+          className="flex flex-wrap items-center justify-center gap-4 pt-2"
+        >
+          <Link
+            href="/#control-layer"
+            className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-ink-deep px-5 text-sm font-medium text-white shadow-[0_10px_24px_rgba(13,22,48,0.12)] transition-colors duration-200 hover:bg-ink"
+          >
+            See how it works
+          </Link>
+          <Link
+            href="/#use-cases"
+            className="inline-flex min-h-[44px] items-center justify-center text-sm font-medium text-ink underline decoration-line underline-offset-8 transition-colors duration-200 hover:text-action"
+          >
+            View use cases
+          </Link>
         </Reveal>
       </div>
     </section>

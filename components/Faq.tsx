@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Reveal } from "@/components/Reveal";
 import { faqs, site } from "@/lib/content";
 
-// Liminary FAQ analog: accordion with toggle plus/close affordance.
 export function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -25,12 +24,12 @@ export function Faq() {
             const open = openIndex === i;
             return (
               <Reveal as="li" key={f.q} delay={i * 60}>
-                <div className="rounded-2xl border border-line">
+                <div className="rounded-lg border border-line bg-paper">
                   <button
                     type="button"
                     aria-expanded={open}
                     onClick={() => setOpenIndex(open ? null : i)}
-                    className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
+                    className="flex min-h-[64px] w-full items-center justify-between gap-4 px-5 py-4 text-left md:px-6"
                   >
                     <span className="type-h3">{f.q}</span>
                     <span
@@ -54,7 +53,7 @@ export function Faq() {
         </ul>
 
         <p className="type-body text-center text-body-60">
-          Feel free to mail us for any enquiries :{" "}
+          For enquiries:{" "}
           <a
             href={`mailto:${site.email}`}
             className="inline-flex min-h-[44px] items-center align-middle text-action hover:text-sky"

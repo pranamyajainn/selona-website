@@ -1,7 +1,6 @@
 import { WordReveal } from "@/components/Reveal";
 import { site } from "@/lib/content";
 
-// Liminary section 2 analog: oversized statement heading revealed on scroll.
 export function Mission() {
   return (
     <section className="gutter py-20 md:py-28">

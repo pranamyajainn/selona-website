@@ -1,4 +1,4 @@
-import { Reveal, WordReveal } from "@/components/Reveal";
+import { Reveal } from "@/components/Reveal";
 
 export function PageHeader({
   eyebrow,
@@ -14,14 +14,13 @@ export function PageHeader({
       <Reveal>
         <p className="type-eyebrow text-ink">{eyebrow}</p>
       </Reveal>
-      <WordReveal as="h1" text={heading} className="type-display" />
+      <Reveal as="h1" delay={80} className="type-display">
+        {heading}
+      </Reveal>
       {sub ? (
-        <WordReveal
-          as="p"
-          text={sub}
-          className="type-lead text-body-60"
-          startDelay={300}
-        />
+        <Reveal as="p" delay={140} className="type-lead text-body-60">
+          {sub}
+        </Reveal>
       ) : null}
     </div>
   );

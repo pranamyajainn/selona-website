@@ -1,0 +1,29 @@
+<svg width="480" height="320" viewBox="0 0 480 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="480" height="320" rx="18" fill="#F5F7FA"/>
+  <rect x="28" y="24" width="424" height="272" rx="16" fill="#FFFFFF" stroke="#D9E3EE"/>
+  <text x="50" y="58" fill="#0C1424" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">Model Routing</text>
+  <rect x="336" y="40" width="84" height="24" rx="12" fill="#EEF5FB"/>
+  <text x="352" y="56" fill="#1D6FE8" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700">Flexible</text>
+  <line x1="28" y1="78" x2="452" y2="78" stroke="#D9E3EE"/>
+
+  <rect x="54" y="114" width="130" height="112" rx="12" fill="#F8FAFC" stroke="#D9E3EE"/>
+  <text x="76" y="146" fill="#24324A" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">Workflow</text>
+  <rect x="76" y="166" width="84" height="24" rx="12" fill="#FFFFFF" stroke="#C7D6E6"/>
+  <text x="88" y="182" fill="#24324A" font-family="Inter, Arial, sans-serif" font-size="10">Board commentary</text>
+
+  <path d="M194 170H232" stroke="#9CCBFF" stroke-width="3"/>
+  <path d="M224 160L234 170L224 180" stroke="#9CCBFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="246" y="102" width="92" height="42" rx="12" fill="#0C1424"/>
+  <text x="268" y="128" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700">Claude</text>
+  <rect x="246" y="154" width="92" height="42" rx="12" fill="#FFFFFF" stroke="#D9E3EE"/>
+  <text x="268" y="180" fill="#24324A" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700">OpenAI</text>
+  <rect x="246" y="206" width="92" height="42" rx="12" fill="#FFFFFF" stroke="#D9E3EE"/>
+  <text x="266" y="232" fill="#24324A" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700">Local</text>
+
+  <path d="M348 176H384" stroke="#9CCBFF" stroke-width="3"/>
+  <path d="M376 166L386 176L376 186" stroke="#9CCBFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="392" y="126" width="44" height="100" rx="12" fill="#EEF5FB" stroke="#9CCBFF"/>
+  <text x="405" y="166" fill="#0C1424" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">Same</text>
+  <text x="399" y="186" fill="#0C1424" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">output</text>
+</svg>

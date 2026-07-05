@@ -1,14 +1,10 @@
 import { Reveal, WordReveal } from "@/components/Reveal";
 import { problems } from "@/lib/content";
 
-// Tension-building problem section (Liminary structural map, section-3 slot):
-// the six structural failures of generic AI in finance, names and one-line
-// explanations verbatim from the investor deck (Slide 2). Sits between the
-// hero and the platform block so the walkthrough reads as the resolution.
 export function Problems() {
   return (
-    <section className="gutter py-20 md:py-28">
-      <div className="mx-auto flex max-w-6xl flex-col gap-12">
+    <section id="problem" className="gutter scroll-mt-28 bg-mist/60 py-14 md:py-24">
+      <div className="mx-auto flex max-w-6xl flex-col gap-9 md:gap-12">
         <div className="flex flex-col gap-4">
           <Reveal>
             <p className="type-eyebrow text-ink">{problems.eyebrow}</p>
@@ -29,10 +25,9 @@ export function Problems() {
             <Reveal
               key={p.name}
               delay={i * 80}
-              className="flex flex-col gap-2 rounded-2xl border border-line bg-paper p-6"
+              className="flex flex-col gap-2.5 rounded-lg border border-line bg-paper p-4 shadow-[0_18px_50px_rgba(13,22,48,0.04)] md:gap-3 md:p-6"
             >
-              <p className="type-eyebrow text-action">{p.name}</p>
-              <h3 className="type-h3">{p.tagline}</h3>
+              <h3 className="type-h3 text-ink-deep">{p.name}</h3>
               <p className="type-body text-body-60">{p.body}</p>
             </Reveal>
           ))}

@@ -1,0 +1,23 @@
+<svg width="480" height="320" viewBox="0 0 480 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="480" height="320" rx="18" fill="#F5F7FA"/>
+  <rect x="28" y="24" width="424" height="272" rx="16" fill="#FFFFFF" stroke="#D9E3EE"/>
+  <text x="50" y="58" fill="#0C1424" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">Version History</text>
+  <rect x="332" y="40" width="88" height="24" rx="12" fill="#EEF5FB"/>
+  <text x="350" y="56" fill="#1D6FE8" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700">Active</text>
+  <line x1="28" y1="78" x2="452" y2="78" stroke="#D9E3EE"/>
+
+  <line x1="82" y1="108" x2="82" y2="248" stroke="#C7D6E6" stroke-width="3"/>
+  <circle cx="82" cy="114" r="9" fill="#1D6FE8"/>
+  <circle cx="82" cy="176" r="8" fill="#FFFFFF" stroke="#9CCBFF" stroke-width="3"/>
+  <circle cx="82" cy="238" r="8" fill="#FFFFFF" stroke="#9CCBFF" stroke-width="3"/>
+
+  <rect x="112" y="96" width="286" height="50" rx="12" fill="#0C1424"/>
+  <text x="132" y="124" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">Version 04</text>
+  <text x="220" y="124" fill="#DDEBFA" font-family="Inter, Arial, sans-serif" font-size="12">KPI definitions updated</text>
+  <rect x="112" y="160" width="286" height="50" rx="12" fill="#FFFFFF" stroke="#D9E3EE"/>
+  <text x="132" y="188" fill="#24324A" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">Version 03</text>
+  <text x="220" y="188" fill="#5D6878" font-family="Inter, Arial, sans-serif" font-size="12">Source file links</text>
+  <rect x="112" y="224" width="286" height="50" rx="12" fill="#FFFFFF" stroke="#D9E3EE"/>
+  <text x="132" y="252" fill="#24324A" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">Version 02</text>
+  <text x="220" y="252" fill="#5D6878" font-family="Inter, Arial, sans-serif" font-size="12">VAT reconciliation</text>
+</svg>

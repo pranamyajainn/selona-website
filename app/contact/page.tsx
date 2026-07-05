@@ -3,65 +3,60 @@ import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
 import { ContactForm } from "@/components/ContactForm";
 import { Faq } from "@/components/Faq";
-import { site } from "@/lib/content";
+import { contactIntro, site } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
-  description:
-    "Contact the ThinkAIWork team for platform demos, support, and custom integrations.",
+  title: "Contact",
+  description: contactIntro.sub,
 };
 
-// Built from Selona's own design system; copy migrated from selona.ai/contact.
 export default function ContactPage() {
   return (
     <>
       <section className="gutter">
         <PageHeader
-          eyebrow="CONTACT"
-          heading="Reach Us At Anytime"
-          sub="Contact the ThinkAIWork team for platform demos, support, and custom integrations."
+          eyebrow={contactIntro.eyebrow}
+          heading={contactIntro.heading}
+          sub={contactIntro.sub}
         />
 
-        <div className="mx-auto grid max-w-5xl gap-6 pb-10 md:grid-cols-2">
-          <Reveal className="flex flex-col gap-2 rounded-2xl border border-line bg-tint/50 p-8">
+        <div className="mx-auto grid max-w-5xl gap-8 pb-20 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+          <Reveal className="flex flex-col gap-5 rounded-lg border border-line bg-tint/60 p-6 md:p-8">
+            <h2 className="type-h3 text-ink-deep">What we will cover</h2>
+            <ul className="flex flex-col gap-3 text-body-60">
+              <li className="type-body">Your first recurring finance workflow</li>
+              <li className="type-body">Context and source-file setup</li>
+              <li className="type-body">Output templates and audit trail needs</li>
+              <li className="type-body">Approved model and deployment preferences</li>
+            </ul>
             <p className="type-body text-body-60">
-              Email us directly for support or custom platform questions.
+              For enquiries:{" "}
+              <a
+                href={`mailto:${site.email}`}
+                className="inline-flex min-h-[44px] min-w-[44px] items-center align-middle text-action hover:text-sky"
+              >
+                {site.email}
+              </a>
             </p>
-            <a
-              href={`mailto:${site.email}`}
-              className="type-h3 text-action hover:text-sky"
-            >
-              {site.email}
-            </a>
           </Reveal>
-          <Reveal
-            delay={100}
-            className="flex flex-col gap-2 rounded-2xl border border-line bg-tint/50 p-8"
-          >
-            <p className="type-body text-body-60">
-              Book a live demo session with a product specialist.
-            </p>
-            <a
-              href={site.bookingUrl}
-              target="_blank"
-              rel="noopener"
-              className="type-h3 text-action hover:text-sky"
-            >
-              Book a demo
-            </a>
+
+          <Reveal className="rounded-lg border border-line bg-paper p-6 md:p-8">
+            <ContactForm
+              submitLabel="Request my walkthrough"
+              fields={[
+                { name: "name", label: "Name" },
+                { name: "email", label: "Work email", type: "email" },
+                { name: "company", label: "Company" },
+                { name: "role", label: "Role" },
+                {
+                  name: "workflow",
+                  label: "First workflow you want to automate",
+                  textarea: true,
+                },
+              ]}
+            />
           </Reveal>
         </div>
-
-        <Reveal className="mx-auto max-w-2xl rounded-2xl border border-line p-8 md:p-10">
-          <ContactForm
-            fields={[
-              { name: "name", label: "Full Name" },
-              { name: "email", label: "Email Address", type: "email" },
-              { name: "subject", label: "Subject Of Interest" },
-              { name: "message", label: "What workflows are you looking to automate?", textarea: true },
-            ]}
-          />
-        </Reveal>
       </section>
       <Faq />
     </>

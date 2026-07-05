@@ -1,0 +1,25 @@
+<svg width="480" height="320" viewBox="0 0 480 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="480" height="320" rx="18" fill="#F5F7FA"/>
+  <rect x="28" y="24" width="424" height="272" rx="16" fill="#FFFFFF" stroke="#D9E3EE"/>
+  <text x="50" y="58" fill="#0C1424" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">Context Builder</text>
+  <rect x="342" y="40" width="78" height="24" rx="12" fill="#EEF5FB"/>
+  <text x="357" y="56" fill="#1D6FE8" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700">Version 04</text>
+  <line x1="28" y1="78" x2="452" y2="78" stroke="#D9E3EE"/>
+
+  <rect x="52" y="104" width="162" height="150" rx="12" fill="#F8FAFC" stroke="#D9E3EE"/>
+  <text x="70" y="132" fill="#24324A" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">Finance context</text>
+  <rect x="70" y="150" width="112" height="24" rx="12" fill="#FFFFFF" stroke="#C7D6E6"/>
+  <text x="84" y="166" fill="#24324A" font-family="Inter, Arial, sans-serif" font-size="11">KPI definitions</text>
+  <rect x="70" y="184" width="128" height="24" rx="12" fill="#FFFFFF" stroke="#C7D6E6"/>
+  <text x="84" y="200" fill="#24324A" font-family="Inter, Arial, sans-serif" font-size="11">Board commentary</text>
+  <rect x="70" y="218" width="100" height="24" rx="12" fill="#1D6FE8"/>
+  <text x="84" y="234" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700">Source file</text>
+
+  <rect x="240" y="104" width="188" height="150" rx="12" fill="#0C1424"/>
+  <text x="262" y="136" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">Controlled inputs</text>
+  <rect x="262" y="158" width="132" height="30" rx="15" fill="#172338"/>
+  <text x="278" y="178" fill="#DDEBFA" font-family="Inter, Arial, sans-serif" font-size="12">Variance analysis</text>
+  <rect x="262" y="200" width="128" height="30" rx="15" fill="#172338"/>
+  <text x="278" y="220" fill="#DDEBFA" font-family="Inter, Arial, sans-serif" font-size="12">Approval required</text>
+  <rect x="262" y="236" width="84" height="8" rx="4" fill="#6EB6FF"/>
+</svg>

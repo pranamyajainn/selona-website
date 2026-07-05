@@ -1,7 +1,5 @@
 import { toolLogos } from "@/lib/content";
 
-// Liminary ingestion-ticker analog: continuous marquee rows of the AI tools
-// Selona works with (list migrated from selona.ai).
 function Row({ reverse = false }: { reverse?: boolean }) {
   const items = [...toolLogos, ...toolLogos];
   return (

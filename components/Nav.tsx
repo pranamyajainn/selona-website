@@ -3,14 +3,8 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
-import { navLinks, site } from "@/lib/content";
+import { navLinks } from "@/lib/content";
 
-// Fixed pill nav, top-anchored on every breakpoint (moved off Liminary's
-// bottom-pill mobile pattern per client feedback: a bottom nav read as
-// broken rather than a header). Desktop keeps the wide inset pill; mobile
-// keeps the same rounded, blurred visual language and menu open/close
-// behavior, just relocated to the top with safe-area padding for notched
-// devices.
 export function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -24,29 +18,34 @@ export function Nav() {
 
   return (
     <div
-      className="nav-drop fixed inset-x-4 z-50 md:inset-x-[60px] xl:inset-x-[100px]"
-      style={{ top: "max(1.25rem, env(safe-area-inset-top))" }}
+      className="nav-drop fixed inset-x-4 z-50 min-[768px]:inset-x-[60px] xl:inset-x-[100px]"
+      style={{ top: "max(0.75rem, env(safe-area-inset-top))" }}
     >
       <header
-        className={`flex items-center justify-between rounded-full px-4 py-2.5 transition-all duration-300 md:px-6 md:py-3 ${
+        className={`flex items-center justify-between rounded-full px-4 py-1.5 transition-all duration-300 min-[768px]:px-6 min-[768px]:py-2.5 ${
           scrolled || open
-            ? "border border-line bg-white/70 shadow-sm backdrop-blur-xl"
-            : "border border-transparent bg-transparent md:bg-transparent"
+            ? "border border-line bg-white/78 shadow-sm backdrop-blur-xl"
+            : "bg-transparent shadow-none"
         }`}
         style={
           scrolled || open ? { WebkitBackdropFilter: "blur(20px)" } : undefined
         }
       >
-        <Link href="/" aria-label="Selona home" onClick={() => setOpen(false)}>
+        <Link
+          href="/"
+          aria-label="Selona home"
+          onClick={() => setOpen(false)}
+          className="inline-flex min-h-[44px] min-w-[44px] items-center"
+        >
           <Logo className="h-6 w-auto md:h-7" />
         </Link>
 
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav className="hidden items-center gap-7 min-[768px]:flex">
           {navLinks.map((l) => (
             <Link
               key={l.label}
               href={l.href}
-              className="text-sm font-medium text-ink transition-colors duration-200 hover:text-sky"
+              className="inline-flex min-h-[44px] min-w-[44px] items-center text-sm font-medium text-ink transition-colors duration-200 hover:text-sky"
             >
               {l.label}
             </Link>
@@ -54,25 +53,19 @@ export function Nav() {
         </nav>
         <Link
           href="/contact"
-          className="hidden rounded-full bg-action px-5 py-2.5 text-sm font-medium text-white transition-colors duration-200 hover:bg-action-hover md:inline-flex"
+          className="hidden min-h-[44px] items-center rounded-full border border-line bg-white/55 px-5 py-2.5 text-sm font-medium text-ink backdrop-blur-md transition-colors duration-200 hover:border-action/30 hover:text-action min-[768px]:inline-flex"
         >
-          {site.ctaPrimary}
+          Contact
         </Link>
 
-        <div className="flex items-center gap-3 md:hidden">
-          <Link
-            href="/contact"
-            className="flex min-h-[44px] items-center rounded-full bg-action px-4 text-xs font-medium text-white"
-          >
-            {site.ctaPrimary}
-          </Link>
+        <div className="flex items-center gap-3 min-[768px]:hidden">
           <button
             type="button"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             aria-controls="mobile-nav-menu"
             onClick={() => setOpen((v) => !v)}
-            className="flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full"
+            className="flex h-[44px] w-[44px] min-w-[44px] flex-col items-center justify-center gap-1.5 rounded-full"
           >
             <span
               className={`block h-0.5 w-5 bg-ink transition-transform duration-300 ${open ? "translate-y-1 rotate-45" : ""}`}
@@ -86,26 +79,34 @@ export function Nav() {
 
       <div
         id="mobile-nav-menu"
-        className={`grid overflow-hidden transition-[grid-template-rows] duration-300 md:hidden ${
-          open ? "grid-rows-[1fr] pt-2" : "grid-rows-[0fr]"
+        aria-hidden={!open}
+        className={`grid overflow-hidden transition-[grid-template-rows] duration-300 min-[768px]:hidden ${
+          open ? "pointer-events-auto grid-rows-[1fr] pt-2" : "pointer-events-none grid-rows-[0fr]"
         }`}
       >
-        <div className="overflow-hidden rounded-3xl border border-line bg-white/90 shadow-lg backdrop-blur-xl">
+        <div
+          className={`overflow-hidden rounded-2xl border bg-white/94 shadow-[0_16px_44px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-opacity duration-200 ${
+            open ? "border-line opacity-100" : "border-transparent opacity-0"
+          }`}
+        >
           <nav>
             <ul className="flex flex-col gap-1 p-3">
-              {[...navLinks, { label: "Contact Us", href: "/contact" }].map(
-                (l) => (
-                  <li key={l.label}>
-                    <Link
-                      href={l.href}
-                      onClick={() => setOpen(false)}
-                      className="block min-h-[44px] rounded-full px-4 py-3 text-sm font-medium text-ink hover:bg-tint"
-                    >
-                      {l.label}
-                    </Link>
-                  </li>
-                ),
-              )}
+              {[
+                ...navLinks,
+                { label: "Contact", href: "/contact" },
+                { label: "Book a walkthrough", href: "/contact" },
+              ].map((l) => (
+                <li key={l.label}>
+                  <Link
+                    href={l.href}
+                    onClick={() => setOpen(false)}
+                    tabIndex={open ? 0 : -1}
+                    className="block min-h-[44px] rounded-full px-4 py-3 text-sm font-medium text-ink hover:bg-tint"
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
         </div>

@@ -10,9 +10,6 @@ export const metadata: Metadata = {
   description: "Join the engineering team behind ThinkAIWork.",
 };
 
-// Built from Selona's own design system; copy migrated from
-// selona.ai/apply-now (its email typo, info@selona.aicom, is corrected).
-// The open-roles cards repeat the real listings from the homepage capture.
 export default function ApplyNowPage() {
   return (
     <>
@@ -28,7 +25,7 @@ export default function ApplyNowPage() {
             <Reveal
               key={`${c.role}-${c.location}`}
               delay={i * 100}
-              className="flex flex-col gap-2 rounded-2xl border border-line bg-tint/50 p-8"
+              className="flex flex-col gap-2 rounded-lg border border-line bg-tint/50 p-8"
             >
               <p className="type-eyebrow text-ink">Open role: {c.location}</p>
               <h2 className="type-h3">{c.role}</h2>
@@ -41,20 +38,20 @@ export default function ApplyNowPage() {
         </div>
 
         <div className="mx-auto grid max-w-5xl gap-6 pb-10 md:grid-cols-2">
-          <Reveal className="flex flex-col gap-2 rounded-2xl border border-line bg-tint/50 p-8">
+          <Reveal className="flex flex-col gap-2 rounded-lg border border-line bg-tint/50 p-8">
             <p className="type-body text-body-60">
-              Email us directly with questions about our open roles.
+              For role enquiries:
             </p>
             <a
               href={`mailto:${site.email}`}
-              className="type-h3 text-action hover:text-sky"
+              className="type-h3 inline-flex min-h-[44px] min-w-[44px] items-center text-action hover:text-sky"
             >
               {site.email}
             </a>
           </Reveal>
           <Reveal
             delay={100}
-            className="flex flex-col gap-2 rounded-2xl border border-line bg-tint/50 p-8"
+            className="flex flex-col gap-2 rounded-lg border border-line bg-tint/50 p-8"
           >
             <p className="type-body text-body-60">
               Book a quick introductory conversation with our talent coordinator.
@@ -63,14 +60,14 @@ export default function ApplyNowPage() {
               href={site.bookingUrl}
               target="_blank"
               rel="noopener"
-              className="type-h3 text-action hover:text-sky"
+              className="type-h3 inline-flex min-h-[44px] min-w-[44px] items-center text-action hover:text-sky"
             >
               Book a call
             </a>
           </Reveal>
         </div>
 
-        <Reveal className="mx-auto max-w-2xl rounded-2xl border border-line p-8 md:p-10">
+        <Reveal className="mx-auto max-w-2xl rounded-lg border border-line p-8 md:p-10">
           {/* Resume upload cannot ride a mailto handoff; the form asks for a
               link to the resume instead. Swap to a real upload when a form
               backend exists. */}

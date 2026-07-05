@@ -5,9 +5,6 @@ import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
 import { services } from "@/lib/content";
 
-// Liminary switcher analog: auto-advancing tab switcher. Tabs are Selona's
-// four services. The active-tab indicator is the orbit satellite dot, the
-// site's signature element.
 const INTERVAL_MS = 5000;
 
 export function Services() {

@@ -19,7 +19,11 @@ export function ContactForm({
     e.preventDefault();
     const data = new FormData(e.currentTarget);
     const subject = encodeURIComponent(
-      String(data.get("subject") || data.get("role") || "Website enquiry"),
+      String(
+        data.get("subject") ||
+          data.get("role") ||
+          "ThinkAIWork walkthrough request",
+      ),
     );
     const bodyLines = fields.map(
       (f) => `${f.label}: ${String(data.get(f.name) || "")}`,
@@ -39,21 +43,21 @@ export function ContactForm({
               name={f.name}
               rows={5}
               required
-              className="rounded-xl border border-line bg-paper px-4 py-3 text-sm outline-none transition-colors focus:border-sky"
+              className="min-h-[132px] rounded-lg border border-line bg-paper px-4 py-3 text-sm outline-none transition-colors focus:border-sky"
             />
           ) : (
             <input
               name={f.name}
               type={f.type ?? "text"}
               required
-              className="rounded-xl border border-line bg-paper px-4 py-3 text-sm outline-none transition-colors focus:border-sky"
+              className="min-h-[44px] rounded-lg border border-line bg-paper px-4 py-3 text-sm outline-none transition-colors focus:border-sky"
             />
           )}
         </label>
       ))}
       <button
         type="submit"
-        className="mt-2 rounded-full bg-action px-6 py-3 text-sm font-medium text-white transition-colors duration-200 hover:bg-action-hover"
+        className="mt-2 min-h-[44px] rounded-full bg-action px-6 py-3 text-sm font-medium text-white transition-colors duration-200 hover:bg-action-hover"
       >
         {submitLabel}
       </button>

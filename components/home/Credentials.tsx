@@ -2,8 +2,6 @@ import Image from "next/image";
 import { Reveal, WordReveal } from "@/components/Reveal";
 import { projects, sectors } from "@/lib/content";
 
-// Liminary testimonials analog: card wall. Selona's proof is project
-// credentials and sector coverage rather than quotes.
 export function Credentials() {
   return (
     <section

@@ -1,0 +1,25 @@
+<svg width="480" height="320" viewBox="0 0 480 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="480" height="320" rx="18" fill="#F5F7FA"/>
+  <rect x="28" y="24" width="424" height="272" rx="16" fill="#FFFFFF" stroke="#D9E3EE"/>
+  <text x="50" y="58" fill="#0C1424" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">Token Budget</text>
+  <line x1="28" y1="78" x2="452" y2="78" stroke="#D9E3EE"/>
+
+  <rect x="54" y="106" width="174" height="122" rx="12" fill="#0C1424"/>
+  <text x="76" y="138" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">Budget set</text>
+  <text x="76" y="160" fill="#9FB6CE" font-family="Inter, Arial, sans-serif" font-size="11">Variance analysis</text>
+  <rect x="76" y="184" width="112" height="10" rx="5" fill="#31415B"/>
+  <rect x="76" y="184" width="72" height="10" rx="5" fill="#6EB6FF"/>
+  <text x="76" y="214" fill="#DDEBFA" font-family="Inter, Arial, sans-serif" font-size="11">Token budget</text>
+
+  <rect x="260" y="106" width="168" height="122" rx="12" fill="#F8FAFC" stroke="#D9E3EE"/>
+  <text x="282" y="138" fill="#24324A" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">Optimiser</text>
+  <rect x="282" y="158" width="112" height="24" rx="12" fill="#FFFFFF" stroke="#C7D6E6"/>
+  <text x="296" y="174" fill="#24324A" font-family="Inter, Arial, sans-serif" font-size="11">Source file</text>
+  <rect x="282" y="194" width="104" height="24" rx="12" fill="#FFFFFF" stroke="#C7D6E6"/>
+  <text x="296" y="210" fill="#24324A" font-family="Inter, Arial, sans-serif" font-size="11">Model route</text>
+
+  <rect x="54" y="250" width="136" height="26" rx="13" fill="#EEF5FB"/>
+  <text x="72" y="267" fill="#1D6FE8" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700">Compress context</text>
+  <rect x="206" y="250" width="126" height="26" rx="13" fill="#EEF5FB"/>
+  <text x="224" y="267" fill="#1D6FE8" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700">Reuse Version 04</text>
+</svg>

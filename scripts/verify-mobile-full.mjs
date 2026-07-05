@@ -81,7 +81,6 @@ for (const w of widths) {
     document.querySelectorAll('body *').forEach((el) => {
       const r = el.getBoundingClientRect();
       if (r.right > doc.clientWidth + 1 || r.left < -1) {
-        const cs = getComputedStyle(el);
         // ignore intentionally oversized fixed/absolute decorative layers that are clipped
         let p = el.parentElement, clipped = false;
         while (p) {

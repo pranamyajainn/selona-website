@@ -1,18 +1,17 @@
-// Testimonials section content, structure referenced from liminary.io's own
-// "Built for people who bill for their perspective" section (confirmed live
-// on the site). Copy below is Selona-specific, supplied directly.
+// Buyer-safe early feedback. Names are omitted until quote permissions are
+// formally confirmed.
 export const testimonialsHeading =
-  "Built for people who bill for their perspective";
+  "Early feedback from finance operators";
 
 export const testimonials = [
   {
     quote:
-      "With ThinkAIWork I can expand beyond my traditional CFO role into operations too.",
+      "ThinkAIWork helps us turn recurring finance work into a repeatable workflow instead of a fresh prompt every month.",
     role: "Fractional CFO",
   },
   {
     quote:
-      "The platform truly drives a lot of value, I don't have to pay premium dollars to auditors anymore.",
+      "ThinkAIWork gives us a clearer audit trail before external review.",
     role: "CFO",
   },
 ];

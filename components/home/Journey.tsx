@@ -1,7 +1,6 @@
 import { Reveal, WordReveal } from "@/components/Reveal";
 import { journey } from "@/lib/content";
 
-// Liminary section 4 analog: staged three-step narrative row.
 export function Journey() {
   return (
     <section className="gutter py-20 md:py-28">
