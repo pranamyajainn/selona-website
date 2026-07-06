@@ -1,26 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import { Reveal } from "@/components/Reveal";
 
-const showcasePosterSrc = "/media/thinkaiwork-showcase-poster.webp";
-const showcaseVideoSrc = "/media/thinkaiwork-showcase.mp4";
+const showcaseImageSrc = "/media/thinkaiwork-context-accelerator.jpeg";
+// Previous MP4 retained for rollback at /media/archive/thinkaiwork-showcase.mp4.
 
 export function ProductShowcase() {
-  const [allowMotion, setAllowMotion] = useState(false);
-
-  useEffect(() => {
-    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const update = () => setAllowMotion(!media.matches);
-
-    update();
-    media.addEventListener("change", update);
-    return () => media.removeEventListener("change", update);
-  }, []);
-
-  const showVideo = showcaseVideoSrc.length > 0 && allowMotion;
-
   return (
     <section
       id="product-preview"
@@ -53,31 +39,17 @@ export function ProductShowcase() {
           className="relative mx-auto w-full max-w-6xl"
         >
           <div className="relative overflow-hidden rounded-[24px] border border-line bg-white/78 shadow-[0_28px_90px_rgba(13,22,48,0.10)] backdrop-blur-md md:rounded-[34px]">
-            <div className="relative aspect-[16/10] sm:aspect-video">
-              {showVideo ? (
-                <video
-                  className="h-full w-full object-cover"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  poster={showcasePosterSrc}
-                  aria-label="ThinkAIWork product preview"
-                >
-                  <source src={showcaseVideoSrc} type="video/mp4" />
-                </video>
-              ) : (
-                <Image
-                  src={showcasePosterSrc}
-                  alt="ThinkAIWork product workspace preview"
-                  fill
-                  priority
-                  unoptimized
-                  sizes="(min-width: 1400px) 1150px, (min-width: 810px) calc(100vw - 34px), calc(100vw - 34px)"
-                  className="object-cover"
-                />
-              )}
+            <div className="relative bg-[#faf8f4]">
+              <Image
+                src={showcaseImageSrc}
+                alt="ThinkAIWork context accelerator workflow preview"
+                width={1600}
+                height={637}
+                priority
+                unoptimized
+                sizes="(min-width: 1400px) 1150px, (min-width: 810px) calc(100vw - 34px), calc(100vw - 34px)"
+                className="h-auto w-full"
+              />
             </div>
           </div>
         </Reveal>
