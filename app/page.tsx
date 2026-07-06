@@ -1,5 +1,6 @@
 import { Hero } from "@/components/home/Hero";
 import { CredibilityStrip } from "@/components/home/CredibilityStrip";
+import { ProductShowcase } from "@/components/home/ProductShowcase";
 import { Problems } from "@/components/home/Problems";
 import { ControlMechanism } from "@/components/home/ControlMechanism";
 import { WorkflowProof } from "@/components/home/WorkflowProof";
@@ -15,6 +16,7 @@ export default function Home() {
     <>
       <Hero />
       <CredibilityStrip />
+      <ProductShowcase />
       <Problems />
       <ControlMechanism />
       <WorkflowProof />

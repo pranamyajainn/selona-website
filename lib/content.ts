@@ -244,9 +244,9 @@ export const pricingTiers = [
   },
   {
     name: "Team",
-    model: "Standardise",
+    model: "Standardize",
     cta: "Scope workflows",
-    description: "For finance teams standardising recurring workflows.",
+    description: "For finance teams standardizing recurring workflows.",
     features: [
       "Shared context library",
       "Multiple workflows",
@@ -364,7 +364,7 @@ export const features = [
   },
   {
     name: "Output templates",
-    body: "Standardise structure, calculations, tone, evidence, and approvals.",
+    body: "Standardize structure, calculations, tone, evidence, and approvals.",
   },
 ];
 
