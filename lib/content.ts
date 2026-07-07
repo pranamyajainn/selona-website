@@ -1,8 +1,9 @@
 export const site = {
   email: "info@selona.ai",
+  formRecipient: "rahul@selona.ai",
   bookingUrl: "https://meetings-eu1.hubspot.com/rahul4",
   eyebrow: "ThinkAIWork by Selona",
-  headline: "The control layer for finance AI.",
+  headline: "The control layer starting with finance AI",
   subheadline:
     "ThinkAIWork turns company context, source files, workflows, and templates into structured, auditable outputs, across the AI models your team chooses.",
   mission:

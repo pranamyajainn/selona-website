@@ -68,9 +68,8 @@ export default function ApplyNowPage() {
         </div>
 
         <Reveal className="mx-auto max-w-2xl rounded-lg border border-line p-8 md:p-10">
-          {/* Resume upload cannot ride a mailto handoff; the form asks for a
-              link to the resume instead. Swap to a real upload when a form
-              backend exists. */}
+          {/* FormSubmit delivery is text-only, so the form asks for a link to
+              the resume instead of a file upload. */}
           <ContactForm
             fields={[
               { name: "name", label: "Full Name" },
