@@ -38,8 +38,8 @@ const workflowVisuals = [
     },
   },
   {
-    image: "/product/overview-a.webp",
-    alt: "ThinkAIWork output workspace overview",
+    image: "/product/auditable-output.webp",
+    alt: "ThinkAIWork auditable output summary with exceptions and source links",
     artifact: {
       label: "Output",
       title: "Exceptions and evidence ready",
